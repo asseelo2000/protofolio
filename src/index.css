@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --cohere-primary: #17171c;
+    --cohere-black: #000000;
+    --cohere-ink: #212121;
+    --cohere-deep-green: #003c33;
+    --cohere-dark-navy: #071829;
+    --cohere-canvas: #ffffff;
+    --cohere-soft-stone: #eeece7;
+    --cohere-pale-green: #edfce9;
+    --cohere-pale-blue: #f1f5ff;
+    --cohere-hairline: #d9d9dd;
+    --cohere-muted: #93939f;
+    --cohere-slate: #75758a;
+    --cohere-action-blue: #1863dc;
+    --cohere-coral: #ff7759;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--cohere-canvas);
+    color: var(--cohere-ink);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Custom Cohere-inspired micro utilities */
+.cohere-border {
+  border: 1px solid var(--cohere-hairline);
+}
+
+.cohere-border-dark {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.cohere-pill {
+  border-radius: 9999px;
+  border: 1px solid var(--cohere-hairline);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cohere-pill:hover {
+  border-color: var(--cohere-primary);
+  background-color: var(--cohere-soft-stone);
+}
+
+/* Smooth modal backdrop */
+.modal-backdrop {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: rgba(23, 23, 28, 0.65);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c2c2c9;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #93939f;
+}
+
