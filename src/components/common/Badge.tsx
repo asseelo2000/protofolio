@@ -20,10 +20,10 @@ export const Badge: React.FC<BadgeProps> = ({
     default: 'bg-cohere-softStone text-cohere-ink border border-cohere-hairline',
     outline: 'bg-transparent text-cohere-slate border border-cohere-hairline hover:border-cohere-primary transition-colors',
     stone: 'bg-cohere-softStone text-cohere-ink font-medium',
-    green: 'bg-cohere-paleGreen text-cohere-deepGreen border border-emerald-200/60 font-medium',
-    blue: 'bg-cohere-paleBlue text-cohere-actionBlue border border-blue-200 font-medium',
-    coral: 'bg-orange-50 text-cohere-coral border border-orange-200 font-medium',
-    dark: 'bg-cohere-primary text-white border border-white/10 font-medium',
+    green: 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20 font-medium',
+    blue: 'bg-blue-500/10 text-cohere-actionBlue border border-blue-500/20 font-medium',
+    coral: 'bg-orange-500/10 text-cohere-coral border border-orange-500/20 font-medium',
+    dark: 'bg-cohere-primary text-cohere-canvas border border-cohere-hairline font-medium',
   }[variant];
 
   return (
@@ -43,7 +43,7 @@ export const AvailabilityBadge: React.FC<{ type: AvailabilityType; label?: strin
     case 'public-store':
       return (
         <Badge variant="green" size="sm">
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse" />
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
           {label || 'Google Play Store'}
         </Badge>
       );
@@ -72,4 +72,3 @@ export const AvailabilityBadge: React.FC<{ type: AvailabilityType; label?: strin
       return null;
   }
 };
-

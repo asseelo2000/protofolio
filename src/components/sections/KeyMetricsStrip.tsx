@@ -18,7 +18,7 @@ export const KeyMetricsStrip: React.FC = () => {
               }`}
             >
               <div className="flex items-baseline gap-1">
-                <span className="font-display text-3xl sm:text-4xl font-normal text-cohere-primary tracking-tight">
+                <span className="font-display text-3xl sm:text-4xl font-normal text-cohere-ink tracking-tight">
                   {stat.value}
                 </span>
               </div>

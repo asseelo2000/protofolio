@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowUpRight, Globe } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Globe, Sun, Moon } from 'lucide-react';
 import { CANDIDATE_PROFILE } from '../../data/resumeData';
 import { useLanguage } from '../../context/LanguageContext';
+import { useTheme } from '../../context/ThemeContext';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { language, setLanguage, t, isRtl } = useLanguage();
+  const { theme, toggleTheme, isDark } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,7 +42,7 @@ export const Navbar: React.FC = () => {
             href="#overview"
             className="group flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-cohere-primary rounded-sm"
           >
-            <div className="w-8 h-8 rounded-sm bg-cohere-primary flex items-center justify-center text-white font-mono text-sm font-bold tracking-tight transition-transform duration-200 group-hover:scale-105">
+            <div className="w-8 h-8 rounded-sm bg-cohere-primary flex items-center justify-center text-cohere-canvas font-mono text-sm font-bold tracking-tight transition-transform duration-200 group-hover:scale-105 shadow-xs">
               {isRtl ? 'أ' : 'A'}
             </div>
             <div className="flex flex-col text-start">
@@ -67,15 +69,29 @@ export const Navbar: React.FC = () => {
             ))}
           </nav>
 
-          {/* Actions & Language Switcher */}
+          {/* Actions: Theme Switcher + Language Switcher + Contact CTA */}
           <div className="hidden sm:flex items-center gap-3">
+            {/* Theme Switcher Button */}
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-pill bg-cohere-softStone border border-cohere-hairline text-cohere-slate hover:text-cohere-ink hover:border-cohere-primary/60 transition-all cursor-pointer shadow-2xs"
+              title={isDark ? (isRtl ? 'التبديل إلى الوضع النهاري' : 'Switch to Light Mode') : (isRtl ? 'التبديل إلى الوضع الليلي' : 'Switch to Dark Mode')}
+              aria-label="Toggle theme"
+            >
+              {isDark ? (
+                <Sun className="w-4 h-4 text-amber-400 animate-in spin-in-90 duration-200" />
+              ) : (
+                <Moon className="w-4 h-4 text-cohere-slate animate-in spin-in-90 duration-200" />
+              )}
+            </button>
+
             {/* Language Switcher Pill */}
             <div className="inline-flex items-center p-0.5 rounded-pill bg-cohere-softStone border border-cohere-hairline text-xs font-mono">
               <button
                 onClick={() => setLanguage('en')}
                 className={`px-2.5 py-1 rounded-pill transition-all cursor-pointer ${
                   language === 'en'
-                    ? 'bg-cohere-primary text-white shadow-xs font-semibold'
+                    ? 'bg-cohere-primary text-cohere-canvas shadow-xs font-semibold'
                     : 'text-cohere-slate hover:text-cohere-primary'
                 }`}
                 title="Switch to English"
@@ -86,7 +102,7 @@ export const Navbar: React.FC = () => {
                 onClick={() => setLanguage('ar')}
                 className={`px-2.5 py-1 rounded-pill transition-all cursor-pointer font-arabic ${
                   language === 'ar'
-                    ? 'bg-cohere-primary text-white shadow-xs font-semibold'
+                    ? 'bg-cohere-primary text-cohere-canvas shadow-xs font-semibold'
                     : 'text-cohere-slate hover:text-cohere-primary'
                 }`}
                 title="التحويل إلى اللغة العربية"
@@ -98,15 +114,27 @@ export const Navbar: React.FC = () => {
             {/* Direct Contact CTA */}
             <a
               href="#contact"
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-pill bg-cohere-primary text-white text-xs font-mono uppercase tracking-wider hover:bg-cohere-ink hover:shadow-sm active:scale-95 transition-all duration-150"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-pill bg-cohere-primary text-cohere-canvas text-xs font-mono uppercase tracking-wider hover:opacity-90 active:scale-95 transition-all duration-150 shadow-xs"
             >
               <span>{t.nav.getInTouch}</span>
               <ArrowUpRight className={`w-3.5 h-3.5 opacity-80 ${isRtl ? 'rotate-[-90deg]' : ''}`} />
             </a>
           </div>
 
-          {/* Mobile Right Controls: Language Switcher + Hamburger */}
+          {/* Mobile Right Controls: Theme Toggle + Language Switcher + Hamburger */}
           <div className="flex md:hidden items-center gap-2">
+            <button
+              onClick={toggleTheme}
+              className="p-1.5 rounded-pill bg-cohere-softStone border border-cohere-hairline text-cohere-slate"
+              aria-label="Toggle theme"
+            >
+              {isDark ? (
+                <Sun className="w-3.5 h-3.5 text-amber-400" />
+              ) : (
+                <Moon className="w-3.5 h-3.5 text-cohere-slate" />
+              )}
+            </button>
+
             <div className="inline-flex items-center p-0.5 rounded-pill bg-cohere-softStone border border-cohere-hairline text-xs font-mono">
               <button
                 onClick={() => setLanguage(language === 'en' ? 'ar' : 'en')}
@@ -147,7 +175,7 @@ export const Navbar: React.FC = () => {
               <a
                 href="#contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-pill bg-cohere-primary text-white text-xs font-mono uppercase tracking-wider"
+                className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-pill bg-cohere-primary text-cohere-canvas text-xs font-mono uppercase tracking-wider"
               >
                 <span>{t.nav.getInTouch}</span>
                 <ArrowUpRight className={`w-3.5 h-3.5 ${isRtl ? 'rotate-[-90deg]' : ''}`} />

@@ -31,7 +31,7 @@ export const ContactSection: React.FC = () => {
               </span>
               <span className="w-1.5 h-1.5 rounded-full bg-cohere-primary"></span>
             </div>
-            <h2 className="font-display text-3xl sm:text-5xl font-normal text-cohere-primary tracking-tight mb-6">
+            <h2 className="font-display text-3xl sm:text-5xl font-normal text-cohere-ink tracking-tight mb-6">
               {t.contact.sectionTitle}
             </h2>
             <p className="text-base text-cohere-slate leading-relaxed mb-8 max-w-lg">
@@ -41,7 +41,7 @@ export const ContactSection: React.FC = () => {
             <div className="flex flex-wrap gap-4">
               <a
                 href={`mailto:${CANDIDATE_PROFILE.email}?subject=Engineering%20Inquiry%20via%20Portfolio`}
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-pill bg-cohere-primary text-white text-xs font-mono uppercase tracking-wider hover:bg-cohere-ink transition-colors shadow-xs"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-pill bg-cohere-primary text-cohere-canvas text-xs font-mono uppercase tracking-wider hover:opacity-90 transition-opacity shadow-xs"
               >
                 <Mail className="w-3.5 h-3.5" />
                 <span>{t.contact.btnEmail}</span>
@@ -70,7 +70,7 @@ export const ContactSection: React.FC = () => {
               {/* Email item */}
               <div className="p-4 bg-cohere-canvas border border-cohere-hairline rounded-md flex items-center justify-between gap-4">
                 <div className="flex items-center gap-3 overflow-hidden">
-                  <div className="p-2 rounded-xs bg-cohere-softStone text-cohere-primary shrink-0">
+                  <div className="p-2 rounded-xs bg-cohere-softStone text-cohere-ink shrink-0">
                     <Mail className="w-4 h-4" />
                   </div>
                   <div className="truncate text-start">
@@ -92,14 +92,14 @@ export const ContactSection: React.FC = () => {
                   title="Copy email to clipboard"
                   aria-label="Copy Email"
                 >
-                  {copiedEmail ? <Check className="w-4 h-4 text-emerald-600" /> : <Copy className="w-4 h-4" />}
+                  {copiedEmail ? <Check className="w-4 h-4 text-emerald-500" /> : <Copy className="w-4 h-4" />}
                 </button>
               </div>
 
               {/* Phone item */}
               <div className="p-4 bg-cohere-canvas border border-cohere-hairline rounded-md flex items-center justify-between gap-4">
                 <div className="flex items-center gap-3 overflow-hidden">
-                  <div className="p-2 rounded-xs bg-cohere-softStone text-cohere-primary shrink-0">
+                  <div className="p-2 rounded-xs bg-cohere-softStone text-cohere-ink shrink-0">
                     <Phone className="w-4 h-4" />
                   </div>
                   <div className="text-start">
@@ -122,13 +122,13 @@ export const ContactSection: React.FC = () => {
                   title="Copy phone number to clipboard"
                   aria-label="Copy Phone Number"
                 >
-                  {copiedPhone ? <Check className="w-4 h-4 text-emerald-600" /> : <Copy className="w-4 h-4" />}
+                  {copiedPhone ? <Check className="w-4 h-4 text-emerald-500" /> : <Copy className="w-4 h-4" />}
                 </button>
               </div>
 
               {/* Location item */}
               <div className="p-4 bg-cohere-canvas border border-cohere-hairline rounded-md flex items-center gap-3">
-                <div className="p-2 rounded-xs bg-cohere-softStone text-cohere-primary shrink-0">
+                <div className="p-2 rounded-xs bg-cohere-softStone text-cohere-ink shrink-0">
                   <MapPin className="w-4 h-4" />
                 </div>
                 <div className="text-start">
@@ -146,10 +146,10 @@ export const ContactSection: React.FC = () => {
                 href={CANDIDATE_PROFILE.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-4 bg-cohere-canvas border border-cohere-hairline rounded-md flex items-center justify-between hover:border-cohere-primary transition-colors group"
+                className="p-4 bg-cohere-canvas border border-cohere-hairline rounded-md flex items-center justify-between hover:border-cohere-primary/80 transition-colors group"
               >
                 <div className="flex items-center gap-3">
-                  <div className="p-2 rounded-xs bg-cohere-softStone text-cohere-primary shrink-0">
+                  <div className="p-2 rounded-xs bg-cohere-softStone text-cohere-ink shrink-0">
                     <Github className="w-4 h-4" />
                   </div>
                   <div className="text-start">

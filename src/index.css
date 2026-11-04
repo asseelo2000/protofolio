@@ -14,10 +14,43 @@
     --cohere-pale-green: #edfce9;
     --cohere-pale-blue: #f1f5ff;
     --cohere-hairline: #d9d9dd;
+    --cohere-border-light: #e5e7eb;
+    --cohere-card-border: #f2f2f2;
     --cohere-muted: #93939f;
     --cohere-slate: #75758a;
+    --cohere-body-muted: #616161;
     --cohere-action-blue: #1863dc;
+    --cohere-focus-blue: #4c6ee6;
     --cohere-coral: #ff7759;
+    --cohere-coral-soft: #ffad9b;
+    --cohere-form-focus: #9b60aa;
+    --cohere-error: #b30000;
+    --cohere-btn-text: #ffffff;
+  }
+
+  .dark {
+    --cohere-primary: #ffffff;
+    --cohere-black: #ffffff;
+    --cohere-ink: #f3f3f6;
+    --cohere-deep-green: #003c33;
+    --cohere-dark-navy: #071829;
+    --cohere-canvas: #0c0c0f;
+    --cohere-soft-stone: #18181f;
+    --cohere-pale-green: #08241b;
+    --cohere-pale-blue: #0b1a2d;
+    --cohere-hairline: #24242e;
+    --cohere-border-light: #2c2c38;
+    --cohere-card-border: #1c1c24;
+    --cohere-muted: #888898;
+    --cohere-slate: #a2a2b4;
+    --cohere-body-muted: #9fa0b2;
+    --cohere-action-blue: #3b82f6;
+    --cohere-focus-blue: #60a5fa;
+    --cohere-coral: #ff7759;
+    --cohere-coral-soft: #ffad9b;
+    --cohere-form-focus: #c084fc;
+    --cohere-error: #f87171;
+    --cohere-btn-text: #0c0c0f;
   }
 
   body {
@@ -26,6 +59,7 @@
     color: var(--cohere-ink);
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
+    transition: background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   h1, h2, h3, .font-display {
@@ -57,11 +91,11 @@
   background-color: var(--cohere-soft-stone);
 }
 
-/* Smooth modal backdrop */
+/* Modal backdrop */
 .modal-backdrop {
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  background: rgba(23, 23, 28, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(12, 12, 15, 0.75);
 }
 
 /* Custom scrollbars */
@@ -71,15 +105,14 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--cohere-canvas);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #c2c2c9;
+  background: var(--cohere-hairline);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #93939f;
+  background: var(--cohere-muted);
 }
-

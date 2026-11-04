@@ -25,7 +25,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   const renderVisualSchematic = () => {
     if (project.id === 'corporate-ibs') {
       return (
-        <div className="w-full h-full min-h-[220px] bg-cohere-primary text-white p-6 rounded-md flex flex-col justify-between font-mono text-xs overflow-hidden relative border border-white/10 group-hover:border-white/20 transition-colors text-start">
+        <div className="w-full h-full min-h-[220px] bg-[#121217] dark:bg-[#08080b] text-white p-6 rounded-md flex flex-col justify-between font-mono text-xs overflow-hidden relative border border-white/10 group-hover:border-white/20 transition-colors text-start">
           <div className="flex items-center justify-between border-b border-white/15 pb-3">
             <span className="text-cohere-paleGreen tracking-wider flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
@@ -38,21 +38,21 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             <div className="p-3 bg-white/5 border border-white/10 rounded-xs">
               <span className="text-[10px] text-cohere-muted block">{isRtl ? 'الطبقة 01' : 'LAYER 01'}</span>
               <span className="font-semibold text-white">{isRtl ? 'الواجهة' : 'Presentation'}</span>
-              <span className="text-[10px] text-cohere-slate block mt-1">React 18 · TS</span>
+              <span className="text-[10px] text-white/60 block mt-1">React 18 · TS</span>
             </div>
             <div className="p-3 bg-white/5 border border-white/10 rounded-xs">
               <span className="text-[10px] text-cohere-muted block">{isRtl ? 'الطبقة 02' : 'LAYER 02'}</span>
               <span className="font-semibold text-white">{isRtl ? 'التطبيق' : 'Application'}</span>
-              <span className="text-[10px] text-cohere-slate block mt-1">Clean Arch</span>
+              <span className="text-[10px] text-white/60 block mt-1">Clean Arch</span>
             </div>
             <div className="p-3 bg-white/5 border border-white/10 rounded-xs">
               <span className="text-[10px] text-cohere-muted block">{isRtl ? 'الطبقة 03' : 'LAYER 03'}</span>
               <span className="font-semibold text-white">{isRtl ? 'النظام المصرفي' : 'Core Banking'}</span>
-              <span className="text-[10px] text-cohere-slate block mt-1">Encrypted Gateway</span>
+              <span className="text-[10px] text-white/60 block mt-1">Encrypted Gateway</span>
             </div>
           </div>
 
-          <div className="flex items-center justify-between text-[11px] text-cohere-slate pt-2 border-t border-white/10">
+          <div className="flex items-center justify-between text-[11px] text-white/60 pt-2 border-t border-white/10">
             <span>{isRtl ? 'الأمن: Zero-Trust / RBAC' : 'Security: Zero-Trust / RBAC'}</span>
             <span className="text-white/80">{isRtl ? 'تزامن الحسابات المؤسسية' : 'Corporate Ledger Sync'}</span>
           </div>
@@ -64,7 +64,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       return (
         <div className="w-full h-full min-h-[220px] bg-cohere-softStone/70 p-6 rounded-md flex flex-col justify-between font-mono text-xs border border-cohere-hairline group-hover:border-cohere-primary/40 transition-colors text-start">
           <div className="flex items-center justify-between border-b border-cohere-hairline pb-3">
-            <span className="text-cohere-primary font-semibold tracking-wider flex items-center gap-2">
+            <span className="text-cohere-ink font-semibold tracking-wider flex items-center gap-2">
               <Smartphone className="w-3.5 h-3.5 text-cohere-actionBlue" />
               {isRtl ? 'منظومة سمسم :: 3 تطبيقات مترابطة' : 'SMSM_ECOSYSTEM :: 3_APP_TOPOLOGY'}
             </span>
@@ -72,17 +72,17 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           </div>
 
           <div className="grid grid-cols-3 gap-2 my-3">
-            <div className="p-2.5 bg-white border border-cohere-hairline rounded-xs">
-              <span className="text-[10px] text-emerald-600 font-semibold block">{isRtl ? 'تطبيق العملاء' : 'CUSTOMER APP'}</span>
+            <div className="p-2.5 bg-cohere-canvas border border-cohere-hairline rounded-xs">
+              <span className="text-[10px] text-emerald-600 dark:text-emerald-400 font-semibold block">{isRtl ? 'تطبيق العملاء' : 'CUSTOMER APP'}</span>
               <span className="text-xs text-cohere-ink font-medium">{isRtl ? 'طلب وشراء' : 'Browse & Order'}</span>
               <span className="text-[9px] text-cohere-muted block mt-1">Google Play</span>
             </div>
-            <div className="p-2.5 bg-white border border-cohere-hairline rounded-xs">
-              <span className="text-[10px] text-blue-600 font-semibold block">{isRtl ? 'تطبيق التجار' : 'MERCHANT APP'}</span>
+            <div className="p-2.5 bg-cohere-canvas border border-cohere-hairline rounded-xs">
+              <span className="text-[10px] text-blue-600 dark:text-blue-400 font-semibold block">{isRtl ? 'تطبيق التجار' : 'MERCHANT APP'}</span>
               <span className="text-xs text-cohere-ink font-medium">{isRtl ? 'إدارة المخزون' : 'Catalog & Orders'}</span>
               <span className="text-[9px] text-cohere-muted block mt-1">Google Play</span>
             </div>
-            <div className="p-2.5 bg-white border border-cohere-hairline rounded-xs">
+            <div className="p-2.5 bg-cohere-canvas border border-cohere-hairline rounded-xs">
               <span className="text-[10px] text-cohere-coral font-semibold block">{isRtl ? 'أسطول التوصيل' : 'DELIVERY FLEET'}</span>
               <span className="text-xs text-cohere-ink font-medium">{isRtl ? 'إسناد فوري' : 'Live Dispatch'}</span>
               <span className="text-[9px] text-cohere-muted block mt-1">{isRtl ? 'أسطول خاص' : 'Private Fleet'}</span>
@@ -91,7 +91,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 
           <div className="flex items-center justify-between text-[11px] text-cohere-slate pt-2 border-t border-cohere-hairline">
             <span>{isRtl ? 'تتبع لحظي GPS' : 'Real-time GPS Tracking'}</span>
-            <span className="text-cohere-primary font-medium">{isRtl ? 'واجهات 60fps' : '60fps Flutter UI'}</span>
+            <span className="text-cohere-ink font-medium">{isRtl ? 'واجهات 60fps' : '60fps Flutter UI'}</span>
           </div>
         </div>
       );
@@ -99,7 +99,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 
     if (project.id === 'abu-meska-construction') {
       return (
-        <div className="w-full h-full min-h-[220px] bg-[#071829] text-white p-6 rounded-md flex flex-col justify-between font-mono text-xs border border-white/10 group-hover:border-white/20 transition-colors text-start">
+        <div className="w-full h-full min-h-[220px] bg-[#071829] dark:bg-[#040e1a] text-white p-6 rounded-md flex flex-col justify-between font-mono text-xs border border-white/10 group-hover:border-white/20 transition-colors text-start">
           <div className="flex items-center justify-between border-b border-white/15 pb-3">
             <span className="text-sky-300 tracking-wider flex items-center gap-2">
               <Globe className="w-3.5 h-3.5 text-sky-400" />
@@ -144,9 +144,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         </div>
 
         <div className="flex flex-wrap gap-1 pt-2 border-t border-cohere-hairline/80">
-          {(project.technologies.backend || project.technologies.frontend || []).slice(0, 3).map((t) => (
-            <span key={t} className="px-2 py-0.5 bg-white border border-cohere-hairline rounded-xs text-[10px] text-cohere-ink">
-              {t}
+          {(project.technologies.backend || project.technologies.frontend || []).slice(0, 3).map((tItem) => (
+            <span key={tItem} className="px-2 py-0.5 bg-cohere-canvas border border-cohere-hairline rounded-xs text-[10px] text-cohere-ink">
+              {tItem}
             </span>
           ))}
         </div>
@@ -157,7 +157,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   // Tier 1 Featured Card Layout
   if (featuredLayout) {
     return (
-      <div className="group relative bg-cohere-canvas border border-cohere-hairline rounded-lg p-6 sm:p-8 hover:border-cohere-primary transition-all duration-200 hover:shadow-md text-start">
+      <div className="group relative bg-cohere-canvas border border-cohere-hairline rounded-lg p-6 sm:p-8 hover:border-cohere-primary/80 transition-all duration-200 hover:shadow-md text-start">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           {/* Visual Canvas / Schematic */}
           <div className="lg:col-span-5 flex flex-col justify-center">
@@ -178,7 +178,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               </div>
 
               {/* Title */}
-              <h3 className="font-display text-2xl sm:text-3xl font-normal text-cohere-primary tracking-tight mb-3 group-hover:text-cohere-actionBlue transition-colors">
+              <h3 className="font-display text-2xl sm:text-3xl font-normal text-cohere-ink tracking-tight mb-3 group-hover:text-cohere-actionBlue transition-colors">
                 {title}
               </h3>
 
@@ -218,7 +218,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-cohere-hairline">
               <button
                 onClick={() => onSelect(project)}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-pill bg-cohere-primary text-white text-xs font-mono uppercase tracking-wider hover:bg-cohere-ink transition-colors active:scale-95 cursor-pointer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-pill bg-cohere-primary text-cohere-canvas text-xs font-mono uppercase tracking-wider hover:opacity-90 transition-colors active:scale-95 cursor-pointer shadow-xs"
               >
                 <span>{t.projects.btnCaseStudy}</span>
                 <ArrowUpRight className={`w-3.5 h-3.5 ${isRtl ? 'rotate-[-90deg]' : ''}`} />
@@ -245,7 +245,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 
   // Tier 2 / Regular Grid Card Layout
   return (
-    <div className="group flex flex-col justify-between bg-cohere-canvas border border-cohere-hairline rounded-lg p-6 hover:border-cohere-primary transition-all duration-200 hover:shadow-xs text-start">
+    <div className="group flex flex-col justify-between bg-cohere-canvas border border-cohere-hairline rounded-lg p-6 hover:border-cohere-primary/80 transition-all duration-200 hover:shadow-xs text-start">
       <div>
         {/* Top Visual Mini Schematic */}
         <div className="mb-5">
@@ -261,7 +261,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         </div>
 
         {/* Title */}
-        <h3 className="font-display text-xl font-normal text-cohere-primary tracking-tight mb-2 group-hover:text-cohere-actionBlue transition-colors">
+        <h3 className="font-display text-xl font-normal text-cohere-ink tracking-tight mb-2 group-hover:text-cohere-actionBlue transition-colors">
           {title}
         </h3>
 
@@ -290,7 +290,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       <div className="flex items-center justify-between pt-4 border-t border-cohere-hairline">
         <button
           onClick={() => onSelect(project)}
-          className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-cohere-primary hover:text-cohere-actionBlue transition-colors font-medium cursor-pointer"
+          className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-cohere-ink hover:text-cohere-actionBlue transition-colors font-medium cursor-pointer"
         >
           <span>{t.projects.btnDetails}</span>
           <ArrowUpRight className={`w-3.5 h-3.5 ${isRtl ? 'rotate-[-90deg]' : ''}`} />

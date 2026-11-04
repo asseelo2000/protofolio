@@ -26,7 +26,7 @@ export const TechnicalSkillsSection: React.FC = () => {
             </span>
             <span className="w-1.5 h-1.5 rounded-full bg-cohere-actionBlue"></span>
           </div>
-          <h2 className="font-display text-3xl sm:text-5xl font-normal text-cohere-primary tracking-tight mb-4">
+          <h2 className="font-display text-3xl sm:text-5xl font-normal text-cohere-ink tracking-tight mb-4">
             {t.skills.sectionTitle}
           </h2>
           <p className="text-sm sm:text-base text-cohere-slate leading-relaxed">
@@ -44,7 +44,7 @@ export const TechnicalSkillsSection: React.FC = () => {
                 onClick={() => setActiveCategory(idx)}
                 className={`flex items-center gap-2 px-4 py-2.5 rounded-pill text-xs font-mono uppercase tracking-wider transition-all duration-150 cursor-pointer ${
                   activeCategory === idx
-                    ? 'bg-cohere-primary text-white shadow-xs'
+                    ? 'bg-cohere-primary text-cohere-canvas shadow-xs font-semibold'
                     : 'bg-cohere-softStone/60 text-cohere-slate hover:bg-cohere-softStone hover:text-cohere-ink'
                 }`}
               >
@@ -68,7 +68,7 @@ export const TechnicalSkillsSection: React.FC = () => {
                 </span>
               )}
             </div>
-            <h3 className="font-display text-2xl sm:text-3xl font-normal text-cohere-primary mb-2">
+            <h3 className="font-display text-2xl sm:text-3xl font-normal text-cohere-ink mb-2">
               {isRtl && SKILL_GROUPS[activeCategory].categoryAr
                 ? SKILL_GROUPS[activeCategory].categoryAr
                 : SKILL_GROUPS[activeCategory].category}
@@ -83,13 +83,13 @@ export const TechnicalSkillsSection: React.FC = () => {
             {SKILL_GROUPS[activeCategory].skills.map((skill, sIdx) => (
               <div
                 key={sIdx}
-                className="bg-cohere-canvas border border-cohere-hairline rounded-md p-4 hover:border-cohere-primary transition-all duration-150 hover:shadow-xs flex flex-col justify-between"
+                className="bg-cohere-canvas border border-cohere-hairline rounded-md p-4 hover:border-cohere-primary/80 transition-all duration-150 hover:shadow-xs flex flex-col justify-between"
               >
                 <div className="flex items-start justify-between gap-2 mb-3">
                   <span className="font-display text-base font-medium text-cohere-ink">
                     {skill.name}
                   </span>
-                  <span className="w-1.5 h-1.5 rounded-full bg-cohere-deepGreen shrink-0 mt-2"></span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 mt-2"></span>
                 </div>
 
                 {skill.tags && (

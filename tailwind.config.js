@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class',
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -8,27 +9,27 @@ export default {
     extend: {
       colors: {
         cohere: {
-          primary: "#17171c",
-          black: "#000000",
-          ink: "#212121",
-          deepGreen: "#003c33",
-          darkNavy: "#071829",
-          canvas: "#ffffff",
-          softStone: "#eeece7",
-          paleGreen: "#edfce9",
-          paleBlue: "#f1f5ff",
-          hairline: "#d9d9dd",
-          borderLight: "#e5e7eb",
-          cardBorder: "#f2f2f2",
-          muted: "#93939f",
-          slate: "#75758a",
-          bodyMuted: "#616161",
-          actionBlue: "#1863dc",
-          focusBlue: "#4c6ee6",
-          coral: "#ff7759",
-          coralSoft: "#ffad9b",
-          formFocus: "#9b60aa",
-          error: "#b30000",
+          primary: "var(--cohere-primary)",
+          black: "var(--cohere-black)",
+          ink: "var(--cohere-ink)",
+          deepGreen: "var(--cohere-deep-green)",
+          darkNavy: "var(--cohere-dark-navy)",
+          canvas: "var(--cohere-canvas)",
+          softStone: "var(--cohere-soft-stone)",
+          paleGreen: "var(--cohere-pale-green)",
+          paleBlue: "var(--cohere-pale-blue)",
+          hairline: "var(--cohere-hairline)",
+          borderLight: "var(--cohere-border-light)",
+          cardBorder: "var(--cohere-card-border)",
+          muted: "var(--cohere-muted)",
+          slate: "var(--cohere-slate)",
+          bodyMuted: "var(--cohere-body-muted)",
+          actionBlue: "var(--cohere-action-blue)",
+          focusBlue: "var(--cohere-focus-blue)",
+          coral: "var(--cohere-coral)",
+          coralSoft: "var(--cohere-coral-soft)",
+          formFocus: "var(--cohere-form-focus)",
+          error: "var(--cohere-error)",
         }
       },
       fontFamily: {
@@ -55,4 +56,3 @@ export default {
   },
   plugins: [],
 }
-

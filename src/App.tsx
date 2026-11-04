@@ -12,6 +12,7 @@ import { ProjectDetailModal } from './components/sections/ProjectDetailModal';
 import { ProjectItem } from './types/portfolio';
 import { PROJECTS_DATA } from './data/projectsData';
 import { LanguageProvider } from './context/LanguageContext';
+import { ThemeProvider } from './context/ThemeContext';
 
 const PortfolioContent: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
@@ -46,8 +47,8 @@ const PortfolioContent: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-cohere-canvas text-cohere-ink flex flex-col selection:bg-cohere-paleGreen selection:text-cohere-deepGreen">
-      {/* Top Fixed Header with Language Switcher */}
+    <div className="min-h-screen bg-cohere-canvas text-cohere-ink flex flex-col selection:bg-cohere-paleGreen selection:text-cohere-deepGreen transition-colors duration-200">
+      {/* Top Fixed Header with Theme & Language Switchers */}
       <Navbar />
 
       {/* Main Content Sections */}
@@ -75,9 +76,11 @@ const PortfolioContent: React.FC = () => {
 
 export const App: React.FC = () => {
   return (
-    <LanguageProvider>
-      <PortfolioContent />
-    </LanguageProvider>
+    <ThemeProvider>
+      <LanguageProvider>
+        <PortfolioContent />
+      </LanguageProvider>
+    </ThemeProvider>
   );
 };
 

@@ -5,12 +5,14 @@ interface ThreeBackgroundProps {
   className?: string;
   intensity?: 'subtle' | 'hero';
   isRtl?: boolean;
+  isDark?: boolean;
 }
 
 export const ThreeBackground: React.FC<ThreeBackgroundProps> = ({ 
   className = '', 
   intensity = 'hero',
-  isRtl = false
+  isRtl = false,
+  isDark = false
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [webGLAvailable, setWebGLAvailable] = useState<boolean>(true);
@@ -47,8 +49,6 @@ export const ThreeBackground: React.FC<ThreeBackgroundProps> = ({
     camera.position.z = 230;
 
     // Shift scene origin for editorial balance:
-    // When LTR: shift to the right (+55) so the network blooms where there is open space
-    // When RTL: shift to the left (-55) so the network blooms where there is open space
     const originOffsetX = isMobile ? 0 : (isRtl ? -55 : 55);
     scene.position.x = originOffsetX;
 
@@ -62,7 +62,7 @@ export const ThreeBackground: React.FC<ThreeBackgroundProps> = ({
     renderer.setSize(container.clientWidth, container.clientHeight);
     container.appendChild(renderer.domElement);
 
-    // 3. Create a soft round particle texture (prevents harsh blocky square particles)
+    // 3. Create a soft round particle texture adapted to light / dark mode
     const createCircleTexture = () => {
       const canvas = document.createElement('canvas');
       canvas.width = 64;
@@ -71,9 +71,15 @@ export const ThreeBackground: React.FC<ThreeBackgroundProps> = ({
       if (!ctx) return null;
 
       const gradient = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
-      gradient.addColorStop(0, 'rgba(100, 110, 120, 1)');
-      gradient.addColorStop(0.5, 'rgba(120, 130, 140, 0.6)');
-      gradient.addColorStop(1, 'rgba(140, 150, 160, 0)');
+      if (isDark) {
+        gradient.addColorStop(0, 'rgba(210, 230, 250, 0.95)');
+        gradient.addColorStop(0.5, 'rgba(160, 190, 220, 0.5)');
+        gradient.addColorStop(1, 'rgba(140, 175, 210, 0)');
+      } else {
+        gradient.addColorStop(0, 'rgba(100, 110, 120, 1)');
+        gradient.addColorStop(0.5, 'rgba(120, 130, 140, 0.6)');
+        gradient.addColorStop(1, 'rgba(140, 150, 160, 0)');
+      }
 
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, 64, 64);
@@ -105,14 +111,15 @@ export const ThreeBackground: React.FC<ThreeBackgroundProps> = ({
     const particleGeometry = new THREE.BufferGeometry();
     particleGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
 
-    // Refined, softer mineral slate styling
+    // Particle styling adapted to theme
+    const particleColor = isDark ? 0xa8c0d6 : 0x8a8a98;
     const particleMaterial = new THREE.PointsMaterial({
-      color: new THREE.Color(0x8a8a98),
-      size: isMobile ? 2.5 : 3.2,
+      color: new THREE.Color(particleColor),
+      size: isMobile ? 2.4 : 3.0,
       map: circleTexture || undefined,
       transparent: true,
-      opacity: intensity === 'hero' ? 0.32 : 0.18,
-      blending: THREE.NormalBlending,
+      opacity: intensity === 'hero' ? (isDark ? 0.36 : 0.32) : 0.18,
+      blending: isDark ? THREE.AdditiveBlending : THREE.NormalBlending,
       depthWrite: false,
     });
 
@@ -125,10 +132,11 @@ export const ThreeBackground: React.FC<ThreeBackgroundProps> = ({
     const lineGeometry = new THREE.BufferGeometry();
     lineGeometry.setAttribute('position', new THREE.BufferAttribute(linePositions, 3));
 
+    const lineColor = isDark ? 0x48647a : 0xa8a8b6;
     const lineMaterial = new THREE.LineBasicMaterial({
-      color: new THREE.Color(0xa8a8b6),
+      color: new THREE.Color(lineColor),
       transparent: true,
-      opacity: 0.12,
+      opacity: isDark ? 0.22 : 0.12,
       linewidth: 1,
     });
 
@@ -257,12 +265,16 @@ export const ThreeBackground: React.FC<ThreeBackgroundProps> = ({
       circleTexture?.dispose();
       renderer.dispose();
     };
-  }, [intensity, isRtl]);
+  }, [intensity, isRtl, isDark]);
 
   if (!webGLAvailable) {
+    const gridLineColor = isDark ? '#23232b' : '#eeece7';
     return (
       <div className={`absolute inset-0 pointer-events-none overflow-hidden ${className}`}>
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#eeece7_1px,transparent_1px),linear-gradient(to_bottom,#eeece7_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_70%_50%,#000_70%,transparent_100%)] opacity-30" />
+        <div 
+          className="absolute inset-0 bg-[linear-gradient(to_right,var(--grid-line)_1px,transparent_1px),linear-gradient(to_bottom,var(--grid-line)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_70%_50%,#000_70%,transparent_100%)] opacity-30"
+          style={{ '--grid-line': gridLineColor } as React.CSSProperties}
+        />
       </div>
     );
   }

@@ -58,7 +58,7 @@ export const SelectedWorkSection: React.FC<SelectedWorkSectionProps> = ({ onSele
               </span>
               <span className="w-1.5 h-1.5 rounded-full bg-cohere-coral"></span>
             </div>
-            <h2 className="font-display text-3xl sm:text-5xl font-normal text-cohere-primary tracking-tight">
+            <h2 className="font-display text-3xl sm:text-5xl font-normal text-cohere-ink tracking-tight">
               {t.projects.sectionTitle}
             </h2>
           </div>
@@ -76,7 +76,7 @@ export const SelectedWorkSection: React.FC<SelectedWorkSectionProps> = ({ onSele
               onClick={() => setActiveCategory(tab.id)}
               className={`px-4 py-2 rounded-pill text-xs font-mono uppercase tracking-wider transition-all duration-150 cursor-pointer flex items-center gap-2 ${
                 activeCategory === tab.id
-                  ? 'bg-cohere-primary text-white shadow-xs'
+                  ? 'bg-cohere-primary text-cohere-canvas shadow-xs font-semibold'
                   : 'bg-cohere-softStone/60 text-cohere-slate hover:bg-cohere-softStone hover:text-cohere-ink'
               }`}
             >
@@ -84,7 +84,7 @@ export const SelectedWorkSection: React.FC<SelectedWorkSectionProps> = ({ onSele
               <span
                 className={`text-[10px] px-1.5 py-0.2 rounded-full font-bold ${
                   activeCategory === tab.id
-                    ? 'bg-white/20 text-white'
+                    ? 'bg-cohere-canvas/20 text-cohere-canvas'
                     : 'bg-cohere-hairline text-cohere-ink'
                 }`}
               >
@@ -138,7 +138,7 @@ export const SelectedWorkSection: React.FC<SelectedWorkSectionProps> = ({ onSele
               </span>
             </div>
 
-            <div className="border border-cohere-hairline rounded-md overflow-hidden bg-cohere-softStone/20">
+            <div className="border border-cohere-hairline rounded-md overflow-hidden bg-cohere-softStone/30">
               <div className="divide-y divide-cohere-hairline">
                 {tier3Projects.map((p) => {
                   const title = isRtl && p.titleAr ? p.titleAr : p.title;
@@ -158,7 +158,7 @@ export const SelectedWorkSection: React.FC<SelectedWorkSectionProps> = ({ onSele
                             {org} · {p.year}
                           </span>
                         </div>
-                        <h4 className="font-display text-lg font-medium text-cohere-primary group-hover:text-cohere-actionBlue transition-colors">
+                        <h4 className="font-display text-lg font-medium text-cohere-ink group-hover:text-cohere-actionBlue transition-colors">
                           {title}
                         </h4>
                         <p className="text-xs text-cohere-slate mt-1 line-clamp-2">
@@ -169,13 +169,13 @@ export const SelectedWorkSection: React.FC<SelectedWorkSectionProps> = ({ onSele
                       <div className="flex items-center gap-3 shrink-0">
                         <div className="hidden md:flex flex-wrap gap-1">
                           {(p.technologies.backend || []).map((tech) => (
-                            <span key={tech} className="px-2 py-0.5 rounded-xs bg-white border border-cohere-hairline text-[10px] font-mono text-cohere-ink">
+                            <span key={tech} className="px-2 py-0.5 rounded-xs bg-cohere-canvas border border-cohere-hairline text-[10px] font-mono text-cohere-ink">
                               {tech}
                             </span>
                           ))}
                         </div>
 
-                        <button className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-pill bg-white border border-cohere-hairline text-cohere-ink text-xs font-mono uppercase tracking-wider group-hover:bg-cohere-primary group-hover:text-white transition-all">
+                        <button className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-pill bg-cohere-canvas border border-cohere-hairline text-cohere-ink text-xs font-mono uppercase tracking-wider group-hover:bg-cohere-primary group-hover:text-cohere-canvas transition-all shadow-2xs">
                           <span>{t.projects.btnDetails}</span>
                           <ArrowUpRight className={`w-3.5 h-3.5 ${isRtl ? 'rotate-[-90deg]' : ''}`} />
                         </button>

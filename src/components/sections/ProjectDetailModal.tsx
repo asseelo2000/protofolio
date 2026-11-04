@@ -66,11 +66,10 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
               <span>{project.year}</span>
             </div>
 
-            <h2 className="font-display text-2xl sm:text-4xl font-normal text-cohere-primary tracking-tight">
+            <h2 className="font-display text-2xl sm:text-4xl font-normal text-cohere-ink tracking-tight">
               {title}
             </h2>
 
-            {/* In English mode, show Arabic subtitle; in Arabic mode, show English subtitle */}
             {!isRtl && project.titleAr && (
               <p className="font-arabic text-base sm:text-lg text-cohere-muted mt-1 text-right" dir="rtl">
                 {project.titleAr}
@@ -95,7 +94,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
                   <span className="font-mono text-[11px] uppercase tracking-wider text-cohere-muted">
                     {m.label}
                   </span>
-                  <span className="font-display text-base sm:text-lg font-medium text-cohere-primary mt-0.5">
+                  <span className="font-display text-base sm:text-lg font-medium text-cohere-ink mt-0.5">
                     {m.value}
                   </span>
                 </div>
@@ -106,7 +105,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
           {/* Sub-Applications Matrix (for Smsm Ecosystem) */}
           {project.subApplications && project.subApplications.length > 0 && (
             <div className="border border-cohere-hairline rounded-md p-5 bg-cohere-canvas">
-              <h4 className="font-mono text-xs uppercase tracking-wider text-cohere-primary font-bold mb-4 flex items-center gap-2">
+              <h4 className="font-mono text-xs uppercase tracking-wider text-cohere-ink font-bold mb-4 flex items-center gap-2">
                 <Layers className="w-4 h-4 text-cohere-actionBlue" />
                 {t.projects.subAppsHeading}
               </h4>
@@ -125,7 +124,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
                       </p>
                     </div>
                     <div className="mt-3 pt-2 border-t border-cohere-hairline flex items-center justify-between">
-                      <span className="text-[10px] font-mono uppercase text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+                      <span className="text-[10px] font-mono uppercase text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 px-2 py-0.5 rounded-full border border-emerald-200 dark:border-emerald-800/40">
                         {sub.status}
                       </span>
                       {sub.link && (
@@ -171,7 +170,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
           {/* Documented Role & Verified Contributions */}
           <div className="border border-cohere-hairline rounded-md p-6 bg-cohere-canvas">
             <div className="flex items-center justify-between border-b border-cohere-hairline pb-3 mb-4">
-              <span className="font-mono text-xs uppercase tracking-wider text-cohere-primary font-bold">
+              <span className="font-mono text-xs uppercase tracking-wider text-cohere-ink font-bold">
                 {t.projects.documentedContribution}
               </span>
               <span className="text-xs font-mono text-cohere-muted">
@@ -186,7 +185,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
             <ul className="space-y-2.5">
               {project.keyContributions.map((c, idx) => (
                 <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-cohere-slate leading-normal">
-                  <CheckCircle2 className="w-4 h-4 text-cohere-deepGreen shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
                   <span>{c}</span>
                 </li>
               ))}
@@ -195,7 +194,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
 
           {/* Key Features */}
           <div>
-            <h4 className="font-mono text-xs uppercase tracking-wider text-cohere-primary font-bold mb-3">
+            <h4 className="font-mono text-xs uppercase tracking-wider text-cohere-ink font-bold mb-3">
               {t.projects.keyFeatures}
             </h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -210,7 +209,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
 
           {/* Architecture Highlights */}
           {project.architectureHighlights && project.architectureHighlights.length > 0 && (
-            <div className="bg-cohere-primary text-white p-6 rounded-md border border-white/10 font-mono text-xs">
+            <div className="bg-[#121217] dark:bg-[#08080b] text-white p-6 rounded-md border border-white/10 font-mono text-xs">
               <span className="text-cohere-paleGreen uppercase tracking-wider font-semibold block mb-3">
                 {t.projects.architectureHighlights}
               </span>
@@ -227,7 +226,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
 
           {/* Complete Technology Taxonomy */}
           <div className="border-t border-cohere-hairline pt-6">
-            <h4 className="font-mono text-xs uppercase tracking-wider text-cohere-primary font-bold mb-4">
+            <h4 className="font-mono text-xs uppercase tracking-wider text-cohere-ink font-bold mb-4">
               {t.projects.techStack}
             </h4>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
@@ -312,7 +311,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-pill bg-cohere-primary text-white text-xs font-mono uppercase tracking-wider hover:bg-cohere-ink transition-colors shadow-xs"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-pill bg-cohere-primary text-cohere-canvas text-xs font-mono uppercase tracking-wider hover:opacity-90 transition-opacity shadow-xs"
               >
                 <span>{link.type === 'google-play' ? t.projects.btnStore : link.label}</span>
                 <ExternalLink className="w-3.5 h-3.5" />
