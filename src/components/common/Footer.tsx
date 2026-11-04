@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowUp, Github, Linkedin, Mail } from 'lucide-react';
 import { CANDIDATE_PROFILE } from '../../data/resumeData';
 import { useLanguage } from '../../context/LanguageContext';
+import mePhoto from '../../assets/me.jpg';
 
 export const Footer: React.FC = () => {
   const { t, isRtl } = useLanguage();
@@ -16,8 +17,15 @@ export const Footer: React.FC = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-cohere-hairline">
           {/* Brand */}
           <div className="flex items-center gap-3">
-            <div className="w-7 h-7 rounded-xs bg-cohere-primary flex items-center justify-center text-white font-mono text-xs font-bold">
-              {isRtl ? 'أ' : 'A'}
+            <div className="relative w-8 h-8 rounded-md overflow-hidden border border-cohere-hairline/80 shadow-xs shrink-0 bg-cohere-softStone">
+              <img
+                src={mePhoto}
+                alt={isRtl ? CANDIDATE_PROFILE.nameAr : CANDIDATE_PROFILE.name}
+                className="w-full h-full object-cover"
+                width={32}
+                height={32}
+                loading="lazy"
+              />
             </div>
             <div>
               <span className="font-display font-bold text-sm tracking-tight text-cohere-ink uppercase">
@@ -73,7 +81,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Metadata */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-6 text-[11px] font-mono text-cohere-muted">
           <span>{t.footer.rights}</span>
-          <span>{t.footer.designRef}</span>
+          {t.footer.designRef && <span>{t.footer.designRef}</span>}
         </div>
       </div>
     </footer>

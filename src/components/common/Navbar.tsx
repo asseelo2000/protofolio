@@ -3,6 +3,7 @@ import { Menu, X, ArrowUpRight, Globe, Sun, Moon } from 'lucide-react';
 import { CANDIDATE_PROFILE } from '../../data/resumeData';
 import { useLanguage } from '../../context/LanguageContext';
 import { useTheme } from '../../context/ThemeContext';
+import mePhoto from '../../assets/me.jpg';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -42,8 +43,15 @@ export const Navbar: React.FC = () => {
             href="#overview"
             className="group flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-cohere-primary rounded-sm"
           >
-            <div className="w-8 h-8 rounded-sm bg-cohere-primary flex items-center justify-center text-cohere-canvas font-mono text-sm font-bold tracking-tight transition-transform duration-200 group-hover:scale-105 shadow-xs">
-              {isRtl ? 'أ' : 'A'}
+            <div className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-md overflow-hidden border border-cohere-hairline/80 group-hover:border-cohere-primary/80 transition-all duration-200 shadow-xs shrink-0 bg-cohere-softStone">
+              <img
+                src={mePhoto}
+                alt={isRtl ? CANDIDATE_PROFILE.nameAr : CANDIDATE_PROFILE.name}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
+                width={36}
+                height={36}
+                loading="eager"
+              />
             </div>
             <div className="flex flex-col text-start">
               <span className="font-display font-bold text-sm tracking-tight text-cohere-ink group-hover:text-cohere-actionBlue transition-colors uppercase">

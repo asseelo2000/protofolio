@@ -203,8 +203,8 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
       copied: 'Copied!',
     },
     footer: {
-      rights: 'Strict factual claims verified against formal CV documents & credentials.',
-      designRef: 'Inspired by Cohere 2026 design principles.',
+      rights: '© 2026 Aseel Taresh. All rights reserved.',
+      designRef: '',
     },
   },
   ar: {
@@ -306,8 +306,8 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
       copied: 'تم النسخ بنجاح!',
     },
     footer: {
-      rights: 'جميع البيانات والخبرات موثقة رسمياً بموجب وثائق السيرة الذاتية والشهادات الصادرة.',
-      designRef: 'تصميم مستوحى من المبادئ المؤسسية لـ Cohere 2026.',
+      rights: '© 2026 أصيل طارش. جميع الحقوق محفوظة.',
+      designRef: '',
     },
   },
 };

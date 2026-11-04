@@ -1,8 +1,8 @@
 import { ExperienceItem, EducationItem, CertificationItem, SkillGroup } from '../types/portfolio';
 
 export const CANDIDATE_PROFILE = {
-  name: 'Aseel Alazazi',
-  nameAr: 'أصيل العزعزي',
+  name: 'Aseel Taresh',
+  nameAr: 'أصيل طارش',
   formalName: 'Aseel Abdulbaqi Mohammed Taresh',
   title: 'Information Technology Specialist in Systems Development & AI',
   titleAr: 'تقني معلومات متخصص في تطوير الأنظمة والذكاء الاصطناعي',
@@ -15,8 +15,8 @@ export const CANDIDATE_PROFILE = {
   phoneDisplay: '773369332',
   github: 'https://github.com/asseelo2000',
   githubUser: 'asseelo2000',
-  linkedin: 'https://www.linkedin.com/in/aseel-alazazi',
-  linkedinUser: 'aseel-alazazi',
+  linkedin: 'https://www.linkedin.com/in/aseel-Taresh',
+  linkedinUser: 'aseel-Taresh',
   stats: [
     { value: '11+', label: 'Delivered Systems & Products', subtext: 'Web, Mobile & Enterprise' },
     { value: '3', label: 'FinTech & Banking Platforms', subtext: 'IBS, Tijari One & ERP' },
