@@ -1,8 +1,12 @@
 import React, { useEffect } from 'react';
-import { X, ExternalLink, ShieldCheck, CheckCircle2, Layers, Cpu, Database, Server, Smartphone } from 'lucide-react';
+import { X, ExternalLink, ShieldCheck, CheckCircle2, Layers, Cpu, Database, Server, Smartphone, Globe } from 'lucide-react';
 import { ProjectItem } from '../../types/portfolio';
 import { AvailabilityBadge } from '../common/Badge';
 import { useLanguage } from '../../context/LanguageContext';
+import { GooglePlayLogo } from '../common/GooglePlayLogo';
+
+import smsmCustomerIcon from '../../assets/project_icons/smsm-customer.png';
+import smsmVendorIcon from '../../assets/project_icons/smsm-vendor.png';
 
 interface ProjectDetailModalProps {
   project: ProjectItem | null;
@@ -121,36 +125,59 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
                 {t.projects.subAppsHeading}
               </h4>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {subApplications.map((sub, idx) => (
-                  <div key={idx} className="p-4 bg-cohere-softStone/40 rounded-xs border border-cohere-hairline/80 flex flex-col justify-between text-start">
-                    <div>
-                      <span className="font-mono text-[10px] uppercase text-cohere-muted tracking-wider">
-                        {isRtl ? `تطبيق 0${idx + 1}` : `APPLICATION 0${idx + 1}`}
-                      </span>
-                      <h5 className="font-display text-sm font-semibold text-cohere-ink mt-0.5 mb-1.5">
-                        {sub.name}
-                      </h5>
-                      <p className="text-xs text-cohere-slate leading-normal">
-                        {sub.role}
-                      </p>
+                {subApplications.map((sub, idx) => {
+                  const subIcon = sub.name.includes('Customer') || sub.name.includes('عملاء')
+                    ? smsmCustomerIcon
+                    : sub.name.includes('Merchant') || sub.name.includes('تجار')
+                    ? smsmVendorIcon
+                    : null;
+
+                  return (
+                    <div key={idx} className="p-4 bg-cohere-softStone/40 rounded-lg border border-cohere-hairline/80 flex flex-col justify-between text-start transition-all hover:border-cohere-primary/40 hover:shadow-sm">
+                      <div>
+                        <div className="flex items-center gap-2.5 mb-2">
+                          {subIcon ? (
+                            <div className="w-9 h-9 rounded-lg overflow-hidden border border-black/10 dark:border-white/10 shadow-2xs bg-white p-0.5 shrink-0">
+                              <img src={subIcon} alt={sub.name} className="w-full h-full object-cover rounded-[6px]" />
+                            </div>
+                          ) : (
+                            <div className="w-9 h-9 rounded-lg bg-cohere-coral/10 text-cohere-coral flex items-center justify-center shrink-0">
+                              <Smartphone className="w-4 h-4" />
+                            </div>
+                          )}
+                          <div className="min-w-0">
+                            <span className="font-mono text-[10px] uppercase text-cohere-muted tracking-wider block">
+                              {isRtl ? `تطبيق 0${idx + 1}` : `APPLICATION 0${idx + 1}`}
+                            </span>
+                            <h5 className="font-display text-sm font-semibold text-cohere-ink truncate">
+                              {sub.name}
+                            </h5>
+                          </div>
+                        </div>
+                        <p className="text-xs text-cohere-slate leading-normal">
+                          {sub.role}
+                        </p>
+                      </div>
+                      <div className="mt-3 pt-2 border-t border-cohere-hairline flex items-center justify-between">
+                        <span className="text-[10px] font-mono uppercase text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 px-2 py-0.5 rounded-full border border-emerald-200 dark:border-emerald-800/40">
+                          {sub.status}
+                        </span>
+                        {sub.link && (
+                          <a
+                            href={sub.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-xs text-cohere-actionBlue hover:underline flex items-center gap-1.5 font-mono"
+                          >
+                            <GooglePlayLogo className="w-3 h-3" variant="color" />
+                            <span>{isRtl ? 'Google Play' : 'Store'}</span>
+                            <ExternalLink className={`w-3 h-3 ${isRtl ? 'rotate-[-90deg]' : ''}`} />
+                          </a>
+                        )}
+                      </div>
                     </div>
-                    <div className="mt-3 pt-2 border-t border-cohere-hairline flex items-center justify-between">
-                      <span className="text-[10px] font-mono uppercase text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 px-2 py-0.5 rounded-full border border-emerald-200 dark:border-emerald-800/40">
-                        {sub.status}
-                      </span>
-                      {sub.link && (
-                        <a
-                          href={sub.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-xs text-cohere-actionBlue hover:underline flex items-center gap-1 font-mono"
-                        >
-                          {isRtl ? 'المتجر' : 'Store'} <ExternalLink className="w-3 h-3" />
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           )}
@@ -324,8 +351,14 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-pill bg-cohere-primary text-cohere-canvas text-xs font-mono uppercase tracking-wider hover:opacity-90 transition-opacity shadow-xs"
               >
+                {link.type === 'google-play' && (
+                  <GooglePlayLogo className="w-3.5 h-3.5" variant="color" />
+                )}
+                {link.type === 'website' && (
+                  <Globe className="w-3.5 h-3.5 text-sky-400" />
+                )}
                 <span>{link.type === 'google-play' ? t.projects.btnStore : (isRtl && link.labelAr ? link.labelAr : link.label)}</span>
-                <ExternalLink className="w-3.5 h-3.5" />
+                <ExternalLink className={`w-3.5 h-3.5 ${isRtl ? 'rotate-[-90deg]' : ''}`} />
               </a>
             ))}
 

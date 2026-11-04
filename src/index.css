@@ -232,3 +232,39 @@
 [dir="rtl"] .icon-external {
   transform: scaleX(-1);
 }
+
+/* ==========================================================================
+   3D PERSPECTIVE & HARDWARE ACCELERATED TRANSFORMS (/3d-web-experience)
+   ========================================================================== */
+
+.preserve-3d {
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.perspective-800 {
+  perspective: 800px;
+  -webkit-perspective: 800px;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Smooth specular reflection sheen */
+@keyframes specular-glint {
+  0% { transform: translateX(-100%) rotate(45deg); }
+  100% { transform: translateX(200%) rotate(45deg); }
+}
+
+.animate-specular {
+  animation: specular-glint 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
