@@ -28,14 +28,17 @@ export const CANDIDATE_PROFILE = {
 export const EXPERIENCES: ExperienceItem[] = [
   {
     period: 'Feb 8, 2026 – Present',
+    periodAr: '8 فبراير 2026 – حتى الآن',
     role: 'Applications Developer & AI Systems Developer',
     roleAr: 'مطور تطبيقات، مطور أنظمة الذكاء الاصطناعي',
     company: 'Tharawat Financial Services & Investment Co.',
     companyAr: 'شركة ثروات للخدمات المالية والاستثمارية',
     location: "Sana'a, Yemen",
+    locationAr: 'صنعاء، اليمن',
     subRoles: [
       {
         title: 'As an Applications Developer',
+        titleAr: 'كمطور تطبيقات برمجية',
         responsibilities: [
           'Develop, maintain, and optimize the multi-application Simsim (Smsm) Store ecosystem: Customer App, Merchant App, and Delivery App.',
           'Comprehensive software architecture overhauls and performance optimizations improving app stability and frame rendering.',
@@ -43,86 +46,138 @@ export const EXPERIENCES: ExperienceItem[] = [
           'Integrate cross-platform mobile apps with backend Laravel RESTful services and real-time push protocols.',
           'Manage application release lifecycles and publishing on the Google Play Store.',
         ],
+        responsibilitiesAr: [
+          'تطوير وصيانة وتحسين منظومة متجر سمسم متعددة التطبيقات: تطبيق العملاء، تطبيق التجار، وتطبيق التوصيل.',
+          'إعادة هيكلة شاملة للبنية المعمارية للبرمجيات وتحسينات الأداء لرفع استقرار التطبيقات وسلاسة عرض الإطارات.',
+          'تصميم واجهات مستخدم حديثة وسلسة باللمس باستخدام Flutter مع دعم كامل وسلس للغتين العربية (RTL) والإنجليزية (LTR).',
+          'ربط وتكامل تطبيقات الهواتف المحمولة مع الخدمات الخلفية Laravel RESTful وبروتوكولات الإشعارات اللحظية.',
+          'إدارة دورة حياة إطلاق وتحديث التطبيقات ونشرها على متجر Google Play.',
+        ],
       },
       {
         title: 'As an AI Systems Developer',
+        titleAr: 'كمطور أنظمة الذكاء الاصطناعي',
         responsibilities: [
           'Study and evaluate opportunities to implement Artificial Intelligence across digital products and customer flows.',
           'Develop Proof of Concept (PoC) models and benchmark emerging AI technologies for commercial viability.',
           'Research emerging generative AI workflows, intelligent agents, and operational automation.',
           'Evaluate enterprise infrastructure requirements to adopt production-grade AI platforms.',
         ],
+        responsibilitiesAr: [
+          'دراسة وتقييم فرص توظيف الذكاء الاصطناعي في مختلف المنتجات الرقمية ومسارات تجربة العملاء.',
+          'تطوير نماذج إثبات المفهوم (PoC) واختبار كفاءة التقنيات الذكية الناشئة ومدى ملاءمتها التجارية.',
+          'البحث في مسارات الذكاء الاصطناعي التوليدي، والوكلاء الأذكياء (Intelligent Agents)، والأتمتة التشغيلية.',
+          'تقييم متطلبات البنية التحتية المؤسسية لاعتماد وتشغيل منصات الذكاء الاصطناعي الإنتاجية.',
+        ],
       },
     ],
   },
   {
     period: 'May 1, 2025 – Present',
+    periodAr: '1 مايو 2025 – حتى الآن',
     role: 'Systems Specialist, Systems & AI Developer',
     roleAr: 'أخصائي أنظمة، مطور أنظمة وأعمال الذكاء الاصطناعي',
     company: 'Yemen Commercial Bank (YCB)',
     companyAr: 'البنك التجاري اليمني',
     location: "Sana'a, Yemen",
+    locationAr: 'صنعاء، اليمن',
     subRoles: [
       {
         title: 'As an AI Systems Developer',
+        titleAr: 'كمطور أنظمة الذكاء الاصطناعي',
         responsibilities: [
           'Design and develop intelligent automation bots to accelerate routine banking operations and eliminate manual discrepancies.',
           'Engineer Retrieval-Augmented Generation (RAG) systems to enhance information retrieval over banking policies and operational documentation.',
           'Design and implement a centralized banking Data Warehouse to consolidate data across core systems for managerial analytics.',
           'Integrate HashiCorp Vault for enterprise secrets management, credentials rotation, and microservices security.',
         ],
+        responsibilitiesAr: [
+          'تصميم وتطوير روبوتات الأتمتة الذكية لتسريع العمليات المصرفية الروتينية والقضاء على الفروقات اليدوية.',
+          'هندسة أنظمة التوليد المعزز بالاسترجاع (RAG) لتعزيز استرجاع المعلومات من وثائق السياسات واللوائح المصرفية.',
+          'تصميم وتنفيذ مستودع البيانات المصرفية المركزي لتوحيد البيانات عبر الأنظمة الرئيسية وتوفير تحليلات إدارية متقدمة.',
+          'دمج وتكامل نظام HashiCorp Vault لإدارة أسرار المؤسسة، وتدوير بيانات الاعتماد، وتأمين الخدمات المصغرة.',
+        ],
       },
       {
         title: 'As a Systems & Mobile Developer',
+        titleAr: 'كمطور أنظمة وتطبيقات الهاتف المحمول',
         responsibilities: [
           'Lead the analysis, design, and full-stack development of the Corporate Internet Banking System (IBS) using .NET 8 and React 18.',
           'Contribute to the continuous development and core banking integrations of the Tijari One mobile banking application using Flutter.',
           'Enforce strict zero-trust security best practices, maker-checker authorization workflows, and auditability.',
         ],
+        responsibilitiesAr: [
+          'قيادة التحليل والتصميم وتطوير Full-Stack لنظام الخدمات المصرفية عبر الإنترنت للشركات (Corporate IBS) بـ .NET 8 وReact 18.',
+          'المساهمة في التطوير المستمر والتكامل مع الأنظمة المصرفية لتطبيق تجاري ون (Tijari One) للهاتف المحمول بـ Flutter.',
+          'تطبيق معايير الأمان الصارمة بنهج Zero-Trust، ومسارات الصلاحيات المزدوجة (Maker-Checker)، والتدقيق الكامل.',
+        ],
       },
       {
         title: 'As a Systems Specialist & Administrator',
+        titleAr: 'كأخصائي ومسؤول إدارة أنظمة مصرفية',
         responsibilities: [
           'Manage, monitor, and ensure 24/7 high availability of core banking systems across Head Office and all nationwide branches.',
           'Supervise mission-critical banking platforms: money transfers, electronic archiving, customer management, daily treasury, and SWIFT/international transfers.',
           'Coordinate technical escalations directly with international software solution vendors and banking technology providers.',
+        ],
+        responsibilitiesAr: [
+          'إدارة ومراقبة وضمان التوفر العالي 24/7 للأنظمة المصرفية الأساسية في الإدارة العامة وجميع الفروع.',
+          'الإشراف على منصات العمليات المصرفية الحرجة: التحويلات المالية، الأرشفة الإلكترونية، خدمة العملاء، الخزينة، والحوالات الدولية SWIFT.',
+          'التنسيق الفني المباشر لمعالجة المشكلات التقنية مع مزودي الحلول البرمجية والأنظمة المصرفية الدولية.',
         ],
       },
     ],
   },
   {
     period: 'Jan 2, 2024 – Aug 18, 2025',
+    periodAr: '2 يناير 2024 – 18 أغسطس 2025',
     role: 'Systems Developer',
     roleAr: 'مطور أنظمة برمجية',
     company: 'Together Information Technology Solutions (Togits)',
-    companyAr: 'شركة توغذر لحلول تكنولوجيا المعلومات',
+    companyAr: 'شركة توجيتس لحلول تكنولوجيا المعلومات',
     location: "Sana'a, Yemen",
+    locationAr: 'صنعاء، اليمن',
     subRoles: [
       {
         title: 'Software & Web Systems Engineering',
+        titleAr: 'هندسة البرمجيات والأنظمة السحابية',
         responsibilities: [
           'Contributed to the design, full-stack development, and integration of multiple enterprise systems with scalable architectures.',
           'Engineered and optimized RESTful APIs and microservices using Django and Python for secure data exchange.',
           'Built the comprehensive Helpdesk & Ticket Management platform and the automated Exam Committee Seat Distribution application.',
           'Provided deep technical troubleshooting and system maintenance under tight project delivery deadlines.',
         ],
+        responsibilitiesAr: [
+          'المساهمة في تصميم وتطوير وتكامل عدة أنظمة مؤسسية معمارية قابلة للتوسع.',
+          'هندسة وتحسين واجهات برمجة التطبيقات RESTful والخدمات المصغرة باستخدام Django وPython لتبادل آمن للبيانات.',
+          'بناء منصة متكاملة للدعم الفني وإدارة التذاكر وتطبيق التوزيع الآلي لأرقام الجلوس ولجان الامتحانات.',
+          'تقديم استكشاف الأخطاء التقنية المتقدمة وصيانة الأنظمة تحت جداول تسليم مشاريع دقيقة.',
+        ],
       },
     ],
   },
   {
     period: '2023 – 2024',
+    periodAr: '2023 – 2024',
     role: 'Technician & Developer',
     roleAr: 'فني ومطور أنظمة',
     company: 'University of Science and Technology',
     companyAr: 'جامعة العلوم والتكنولوجيا',
     location: "Sana'a, Yemen",
+    locationAr: 'صنعاء، اليمن',
     subRoles: [
       {
         title: 'Academic Analytics & Machine Learning',
+        titleAr: 'التحليلات الأكاديمية والتعلم الآلي',
         responsibilities: [
           'Developed a Django-based platform for processing student academic performance data and generating analytical reports.',
           'Integrated Machine Learning models to analyze performance trends and support academic intervention.',
           'Documented system workflows to support departmental training and maintain ongoing database integrity.',
+        ],
+        responsibilitiesAr: [
+          'تطوير منصة معتمدة على Django لمعالجة بيانات أداء الطلاب الأكاديمي وتوليد تقارير تحليلية وإحصائية.',
+          'دمج نماذج التعلم الآلي (Machine Learning) لتحليل اتجاهات الأداء ودعم قرارات الإرشاد الأكاديمي المبكر.',
+          'توثيق مسارات عمل النظام لدعم التدريب المؤسسي وضمان السلامة المستمرة لقواعد البيانات.',
         ],
       },
     ],
@@ -132,31 +187,46 @@ export const EXPERIENCES: ExperienceItem[] = [
 export const EDUCATION: EducationItem[] = [
   {
     period: 'Graduated June 2024',
+    periodAr: 'تخرج في يونيو 2024',
     degree: "Bachelor's Degree in Information Technology (English Program)",
     degreeAr: 'بكالوريوس في تكنولوجيا المعلومات (البرنامج باللغة الإنجليزية)',
     institution: 'University of Science and Technology',
     institutionAr: 'جامعة العلوم والتكنولوجيا',
     location: "Sana'a, Yemen",
+    locationAr: 'صنعاء، اليمن',
     honors: 'Excellent With Honors (مرتبة الشرف الأولى)',
+    honorsAr: 'ممتاز مع مرتبة الشرف الأولى (الأول على الدفعة)',
     gpa: '92.51 / 100 (Equivalent to 4.0 / 4.0)',
     highlights: [
       'Graduated with First-Class Honors in the English-taught degree curriculum.',
       'Distinguished Member of the University’s Information Technology Association.',
       'Graduation certificate and academic standing officially validated with honors decree.',
     ],
+    highlightsAr: [
+      'التخرج بمرتبة الشرف الأولى في تخصص تكنولوجيا المعلومات باللغة الإنجليزية.',
+      'عضو متميز في جمعية تكنولوجيا المعلومات بالجامعة.',
+      'شهادة التخرج والمكانة الأكاديمية معتمدة رسمياً بقرار منح مرتبة الشرف الأولى.',
+    ],
   },
   {
     period: '2019 – 2020',
+    periodAr: '2019 – 2020',
     degree: 'Advanced English Language Certification',
     degreeAr: 'شهادة اللغة الإنجليزية المتقدمة',
     institution: 'Mali Institute for Languages',
     institutionAr: 'معهد مالي للغات',
     location: 'Taiz, Yemen',
+    locationAr: 'تعز، اليمن',
     honors: 'Professional Fluency',
+    honorsAr: 'طلاقة مهنية معتمدة',
     gpa: 'Certified Distinction',
     highlights: [
       'Professional speaking, technical writing, and business conversation mastery.',
       'Bilingual technical documentation and cross-border client collaboration skills.',
+    ],
+    highlightsAr: [
+      'إتقان المحادثة المهنية، والكتابة التقنية، والتواصل في بيئة الأعمال.',
+      'مهارات متقدمة في كتابة التوثيق التقني ثنائي اللغة والتعاون مع الشركاء متعددي الجنسيات.',
     ],
   },
 ];
@@ -164,47 +234,77 @@ export const EDUCATION: EducationItem[] = [
 export const CERTIFICATIONS: CertificationItem[] = [
   {
     title: 'Artificial Intelligence in the Banking Sector (Python & OOP)',
+    titleAr: 'الذكاء الاصطناعي في القطاع المصرفي (Python & OOP)',
     issuer: 'Institute of Banking Studies (IBS)',
+    issuerAr: 'معهد الدراسات المصرفية (IBS)',
     date: 'Sep 2025',
+    dateAr: 'سبتمبر 2025',
     details: '30 hours intensive training on Python foundations, Object-Oriented Programming, and algorithmic implementation in banking systems.',
+    detailsAr: '30 ساعة تدريبية مكثفة حول أساسيات بايثون، والبرمجة كائنية التوجه (OOP)، والتطبيقات الخوارزمية في الأنظمة المصرفية.',
     grade: 'Grade: 100% Distinction',
+    gradeAr: 'التقدير: 100% امتياز مع مرتبة الشرف',
   },
   {
     title: 'Artificial Intelligence & Deep Machine Learning',
+    titleAr: 'الذكاء الاصطناعي وتعلم الآلة العميق (Deep Machine Learning)',
     issuer: 'Institute of Banking Studies (IBS)',
+    issuerAr: 'معهد الدراسات المصرفية (IBS)',
     date: 'Oct 2025',
+    dateAr: 'أكتوبر 2025',
     details: '20 hours focused on deep neural networks, predictive financial modeling, and machine learning architectures for banking operations.',
+    detailsAr: '20 ساعة تدريبية ركزت على الشبكات العصبية العميقة، والنمذجة المالية التنبؤية، ومعماريات تعلم الآلة في العمليات المصرفية.',
   },
   {
     title: 'Generative Artificial Intelligence Program',
+    titleAr: 'برنامج الذكاء الاصطناعي التوليدي (Generative AI)',
     issuer: 'Institute of Banking Studies (IBS)',
+    issuerAr: 'معهد الدراسات المصرفية (IBS)',
     date: 'Dec 2025',
+    dateAr: 'ديسمبر 2025',
     details: '15 hours covering Large Language Models (LLMs), RAG architectures, prompt engineering, and intelligent workplace agents.',
+    detailsAr: '15 ساعة تدريبية غطت النماذج اللغوية الكبيرة (LLMs)، ومعماريات RAG، وهندسة الأوامر (Prompt Engineering)، والوكلاء الأذكياء في بيئة العمل.',
   },
   {
     title: 'ITIL Reference Library (Information Technology Infrastructure Library)',
+    titleAr: 'مكتبة البنية التحتية لتكنولوجيا المعلومات (ITIL)',
     issuer: 'Institute of Banking Studies (IBS)',
+    issuerAr: 'معهد الدراسات المصرفية (IBS)',
     date: 'Nov 2025',
+    dateAr: 'نوفمبر 2025',
     details: '20 hours of enterprise IT service management, incident governance, SLA compliance, and operational continuity.',
+    detailsAr: '20 ساعة في إدارة خدمات تكنولوجيا المعلومات المؤسسية، وحوكمة البلاغات، والامتثال لاتفاقيات مستوى الخدمة (SLA)، واستمرارية الأعمال.',
     grade: 'Grade: 77%',
+    gradeAr: 'الدرجة: 77%',
   },
   {
     title: 'CCNAv7: Introduction to Networks',
+    titleAr: 'مقدمة في شبكات سيسكو (CCNAv7: Introduction to Networks)',
     issuer: 'Cisco Networking Academy',
+    issuerAr: 'أكاديمية سيسكو للشبكات (Cisco Networking Academy)',
     date: 'Apr 2022',
+    dateAr: 'أبريل 2022',
     details: 'Network architectures, IPv4/IPv6 addressing schemes, Ethernet switching, routing protocols, and enterprise network security.',
+    detailsAr: 'معماريات الشبكات، وعنونة IPv4/IPv6، ومحولات إيثرنت، وبروتوكولات التوجيه، وأمن الشبكات المؤسسية.',
   },
   {
     title: 'Enterprise Banking Systems Training Credential',
+    titleAr: 'شهادة التدريب على الأنظمة المصرفية المؤسسية',
     issuer: 'Yemen Commercial Bank (YCB)',
+    issuerAr: 'بنك اليمن التجاري (YCB)',
     date: 'May 2025',
+    dateAr: 'مايو 2025',
     details: 'Certified operational training covering Active Directory, DNS/DHCP, Microsoft Exchange, Virtualization (Hyper-V/VMware), Agile, and Business Continuity.',
+    detailsAr: 'تدريب تشغيلي معتمد شمل Active Directory وDNS/DHCP وMicrosoft Exchange والبيئات الافتراضية (Hyper-V/VMware) ومنهجيات Agile واستمرارية الأعمال.',
   },
   {
     title: 'Software Developer Experience Certification',
+    titleAr: 'شهادة خبرة في تطوير البرمجيات والأنظمة',
     issuer: 'Together Information Technology Solutions (Togits)',
+    issuerAr: 'شركة توجيتس لحلول تكنولوجيا المعلومات (Togits)',
     date: 'Aug 2025',
+    dateAr: 'أغسطس 2025',
     details: 'Formal certification verifying contributions across enterprise information systems, Django APIs, and microservices.',
+    detailsAr: 'شهادة رسمية تثبت المساهمة في تطوير نظم المعلومات المؤسسية، وواجهات برمجة تطبيقات Django، والخدمات المصغرة.',
   },
 ];
 
@@ -213,6 +313,7 @@ export const SKILL_GROUPS: SkillGroup[] = [
     category: 'Backend & Enterprise Architecture',
     categoryAr: 'تطوير الأنظمة الخلفية والمعمارية المؤسسية',
     description: 'Mission-critical APIs, clean domain boundaries, and high-security enterprise backends.',
+    descriptionAr: 'واجهات برمجة تطبيقات للمهام الحرجة، وحدود نطاق معمارية واضحة، وخوادم مؤسسية عالية الأمان.',
     skills: [
       { name: '.NET 8 / C#', tags: ['Enterprise', 'Banking'] },
       { name: 'ASP.NET Core Web API', tags: ['REST', 'Clean Architecture'] },
@@ -228,6 +329,7 @@ export const SKILL_GROUPS: SkillGroup[] = [
     category: 'Mobile Applications Engineering',
     categoryAr: 'تطوير تطبيقات الهاتف المحمول',
     description: 'Native-feel 60fps/120fps cross-platform applications with seamless Arabic (RTL) & English (LTR) design.',
+    descriptionAr: 'تطبيقات متعددة المنصات بأداء سلس 60/120 إطاراً في الثانية ودعم متكامل للعربية (RTL) والإنجليزية (LTR).',
     skills: [
       { name: 'Flutter & Dart', tags: ['Cross-Platform', '120fps UI'] },
       { name: 'State Management (Riverpod, Bloc, Provider)', tags: ['Predictable State'] },
@@ -241,6 +343,7 @@ export const SKILL_GROUPS: SkillGroup[] = [
     category: 'Modern Web & 3D Interactive Frontend',
     categoryAr: 'تطوير واجهات الويب والتقنيات ثلاثية الأبعاد',
     description: 'High-speed editorial web platforms, design systems, and responsive 3D WebGL experiences.',
+    descriptionAr: 'منصات ويب فائقة السرعة، وأنظمة تصميم حديثة، وتجارب تفاعلية ثلاثية الأبعاد بتقنية WebGL.',
     skills: [
       { name: 'React 18 / 19', tags: ['Component Architecture'] },
       { name: 'TypeScript', tags: ['Strict Typing'] },
@@ -255,6 +358,7 @@ export const SKILL_GROUPS: SkillGroup[] = [
     category: 'Applied AI & Data Architecture',
     categoryAr: 'الذكاء الاصطناعي التطبيقي وهندسة البيانات',
     description: 'Real-world generative AI, retrieval systems, data warehousing, and predictive models.',
+    descriptionAr: 'ذكاء اصطناعي توليدي تطبيقي، وأنظمة استرجاع المعلومات RAG، ومستودعات البيانات، والنماذج التنبؤية.',
     skills: [
       { name: 'Retrieval-Augmented Generation (RAG)', tags: ['Enterprise Knowledge'] },
       { name: 'LLM Agents & Workflow Automation Bots', tags: ['Banking Operations'] },
@@ -268,6 +372,7 @@ export const SKILL_GROUPS: SkillGroup[] = [
     category: 'Enterprise Infrastructure & Security',
     categoryAr: 'البنية التحتية وأمن المعلومات المؤسسي',
     description: 'Zero-trust secret management, container orchestration, and high-availability operations.',
+    descriptionAr: 'إدارة أسرار المؤسسة بنهج Zero-Trust، وإدارة الحاويات، وعمليات البنية التحتية عالية التوفر.',
     skills: [
       { name: 'HashiCorp Vault', tags: ['Secrets Management', 'Zero-Trust'] },
       { name: 'Docker & Kubernetes / OpenShift OKD', tags: ['Containers', 'Orchestration'] },
@@ -280,4 +385,3 @@ export const SKILL_GROUPS: SkillGroup[] = [
     ],
   },
 ];
-

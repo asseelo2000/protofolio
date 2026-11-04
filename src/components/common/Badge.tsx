@@ -1,5 +1,6 @@
 import React from 'react';
 import { AvailabilityType } from '../../types/portfolio';
+import { useLanguage } from '../../context/LanguageContext';
 
 interface BadgeProps {
   children: React.ReactNode;
@@ -39,33 +40,35 @@ export const AvailabilityBadge: React.FC<{ type: AvailabilityType; label?: strin
   type, 
   label 
 }) => {
+  const { isRtl } = useLanguage();
+
   switch (type) {
     case 'public-store':
       return (
         <Badge variant="green" size="sm">
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-          {label || 'Google Play Store'}
+          {label || (isRtl ? 'متوفر على متجر Google Play' : 'Google Play Store')}
         </Badge>
       );
     case 'public-web':
       return (
         <Badge variant="blue" size="sm">
           <span className="w-1.5 h-1.5 rounded-full bg-cohere-actionBlue" />
-          {label || 'Live Production'}
+          {label || (isRtl ? 'منشور أونلاين' : 'Live Production')}
         </Badge>
       );
     case 'enterprise-private':
       return (
         <Badge variant="stone" size="sm">
           <span className="w-1.5 h-1.5 rounded-full bg-cohere-slate" />
-          {label || 'Enterprise Banking'}
+          {label || (isRtl ? 'نظام مصرفي مؤسسي خاص' : 'Enterprise Banking')}
         </Badge>
       );
     case 'internal-system':
       return (
         <Badge variant="outline" size="sm">
           <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
-          {label || 'Internal Corporate System'}
+          {label || (isRtl ? 'نظام مؤسسي داخلي' : 'Internal Corporate System')}
         </Badge>
       );
     default:

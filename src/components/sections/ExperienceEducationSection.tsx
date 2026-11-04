@@ -71,7 +71,8 @@ export const ExperienceEducationSection: React.FC = () => {
             {EXPERIENCES.map((exp, idx) => {
               const roleTitle = isRtl && exp.roleAr ? exp.roleAr : exp.role;
               const companyName = isRtl && exp.companyAr ? exp.companyAr : exp.company;
-              const location = isRtl ? 'صنعاء، اليمن' : exp.location;
+              const period = isRtl && exp.periodAr ? exp.periodAr : exp.period;
+              const location = isRtl && exp.locationAr ? exp.locationAr : exp.location;
 
               return (
                 <div
@@ -81,7 +82,7 @@ export const ExperienceEducationSection: React.FC = () => {
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-cohere-hairline/80 pb-4 mb-6">
                     <div>
                       <span className="font-mono text-xs uppercase tracking-wider text-cohere-muted block">
-                        {exp.period}
+                        {period}
                       </span>
                       <h3 className="font-display text-2xl font-normal text-cohere-ink mt-1">
                         {roleTitle}
@@ -102,26 +103,31 @@ export const ExperienceEducationSection: React.FC = () => {
 
                   {exp.subRoles && exp.subRoles.length > 0 && (
                     <div className="space-y-6">
-                      {exp.subRoles.map((sub, sIdx) => (
-                        <div
-                          key={sIdx}
-                          className={`${
-                            isRtl ? 'pr-4 border-r-2' : 'pl-4 border-l-2'
-                          } border-cohere-hairline`}
-                        >
-                          <h4 className="font-mono text-xs uppercase tracking-wider text-cohere-ink font-bold mb-3">
-                            {sub.title}
-                          </h4>
-                          <ul className="space-y-2">
-                            {sub.responsibilities.map((resp, rIdx) => (
-                              <li key={rIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-cohere-slate leading-relaxed">
-                                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 mt-2"></span>
-                                <span>{resp}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      ))}
+                      {exp.subRoles.map((sub, sIdx) => {
+                        const subTitle = isRtl && sub.titleAr ? sub.titleAr : sub.title;
+                        const subResponsibilities = isRtl && sub.responsibilitiesAr ? sub.responsibilitiesAr : sub.responsibilities;
+
+                        return (
+                          <div
+                            key={sIdx}
+                            className={`${
+                              isRtl ? 'pr-4 border-r-2' : 'pl-4 border-l-2'
+                            } border-cohere-hairline`}
+                          >
+                            <h4 className="font-mono text-xs uppercase tracking-wider text-cohere-ink font-bold mb-3">
+                              {subTitle}
+                            </h4>
+                            <ul className="space-y-2">
+                              {subResponsibilities.map((resp, rIdx) => (
+                                <li key={rIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-cohere-slate leading-relaxed">
+                                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 mt-2"></span>
+                                  <span>{resp}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        );
+                      })}
                     </div>
                   )}
                 </div>
@@ -136,6 +142,10 @@ export const ExperienceEducationSection: React.FC = () => {
             {EDUCATION.map((edu, idx) => {
               const degree = isRtl && edu.degreeAr ? edu.degreeAr : edu.degree;
               const institution = isRtl && edu.institutionAr ? edu.institutionAr : edu.institution;
+              const period = isRtl && edu.periodAr ? edu.periodAr : edu.period;
+              const location = isRtl && edu.locationAr ? edu.locationAr : edu.location;
+              const honors = isRtl && edu.honorsAr ? edu.honorsAr : edu.honors;
+              const highlights = isRtl && edu.highlightsAr ? edu.highlightsAr : edu.highlights;
 
               return (
                 <div
@@ -144,8 +154,8 @@ export const ExperienceEducationSection: React.FC = () => {
                 >
                   <div>
                     <div className="flex items-center justify-between text-xs font-mono uppercase tracking-wider text-cohere-muted mb-3">
-                      <span>{edu.period}</span>
-                      <span>{isRtl ? 'صنعاء، اليمن' : edu.location}</span>
+                      <span>{period}</span>
+                      <span>{location}</span>
                     </div>
 
                     <h3 className="font-display text-xl sm:text-2xl font-normal text-cohere-ink mb-1">
@@ -161,7 +171,7 @@ export const ExperienceEducationSection: React.FC = () => {
                         {t.background.distinctionBadge}
                       </span>
                       <span className="font-display text-lg font-semibold text-emerald-950 dark:text-emerald-300 block mt-0.5">
-                        {edu.honors}
+                        {honors}
                       </span>
                       <span className="font-mono text-xs text-emerald-800 dark:text-emerald-400 font-medium block mt-1">
                         {isRtl ? `المعدل التراكمي: ${edu.gpa}` : `Cumulative GPA: ${edu.gpa}`}
@@ -169,7 +179,7 @@ export const ExperienceEducationSection: React.FC = () => {
                     </div>
 
                     <ul className="space-y-2">
-                      {edu.highlights.map((h, hIdx) => (
+                      {highlights.map((h, hIdx) => (
                         <li key={hIdx} className="flex items-start gap-2 text-xs sm:text-sm text-cohere-slate">
                           <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
                           <span>{h}</span>
@@ -194,35 +204,43 @@ export const ExperienceEducationSection: React.FC = () => {
         {/* Tab 3: Certifications */}
         {activeTab === 'certifications' && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {CERTIFICATIONS.map((cert, idx) => (
-              <div
-                key={idx}
-                className="bg-cohere-canvas border border-cohere-hairline rounded-md p-5 flex flex-col justify-between hover:border-cohere-primary/80 transition-colors text-start"
-              >
-                <div>
-                  <div className="flex items-center justify-between text-[11px] font-mono text-cohere-muted mb-2">
-                    <span>{cert.issuer}</span>
-                    <span>{cert.date}</span>
+            {CERTIFICATIONS.map((cert, idx) => {
+              const title = isRtl && cert.titleAr ? cert.titleAr : cert.title;
+              const issuer = isRtl && cert.issuerAr ? cert.issuerAr : cert.issuer;
+              const date = isRtl && cert.dateAr ? cert.dateAr : cert.date;
+              const details = isRtl && cert.detailsAr ? cert.detailsAr : cert.details;
+              const grade = isRtl && cert.gradeAr ? cert.gradeAr : cert.grade;
+
+              return (
+                <div
+                  key={idx}
+                  className="bg-cohere-canvas border border-cohere-hairline rounded-md p-5 flex flex-col justify-between hover:border-cohere-primary/80 transition-colors text-start"
+                >
+                  <div>
+                    <div className="flex items-center justify-between text-[11px] font-mono text-cohere-muted mb-2">
+                      <span>{issuer}</span>
+                      <span>{date}</span>
+                    </div>
+
+                    <h4 className="font-display text-base font-medium text-cohere-ink mb-2">
+                      {title}
+                    </h4>
+
+                    <p className="text-xs text-cohere-slate leading-relaxed mb-4">
+                      {details}
+                    </p>
                   </div>
 
-                  <h4 className="font-display text-base font-medium text-cohere-ink mb-2">
-                    {cert.title}
-                  </h4>
-
-                  <p className="text-xs text-cohere-slate leading-relaxed mb-4">
-                    {cert.details}
-                  </p>
+                  {grade && (
+                    <div className="pt-2 border-t border-cohere-hairline flex items-center justify-between">
+                      <span className="font-mono text-[11px] font-semibold text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 px-2 py-0.5 rounded-full border border-emerald-200 dark:border-emerald-800/40">
+                        {grade}
+                      </span>
+                    </div>
+                  )}
                 </div>
-
-                {cert.grade && (
-                  <div className="pt-2 border-t border-cohere-hairline flex items-center justify-between">
-                    <span className="font-mono text-[11px] font-semibold text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 px-2 py-0.5 rounded-full border border-emerald-200 dark:border-emerald-800/40">
-                      {cert.grade}
-                    </span>
-                  </div>
-                )}
-              </div>
-            ))}
+              );
+            })}
           </div>
         )}
       </div>

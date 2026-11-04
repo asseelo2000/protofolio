@@ -20,6 +20,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   const title = isRtl && project.titleAr ? project.titleAr : project.title;
   const organization = isRtl && project.organizationAr ? project.organizationAr : project.organization;
   const description = isRtl && project.shortDescriptionAr ? project.shortDescriptionAr : project.shortDescription;
+  const categoryLabel = isRtl && project.categoryLabelAr ? project.categoryLabelAr : project.categoryLabel;
+  const documentedRole = isRtl && project.documentedRoleAr ? project.documentedRoleAr : project.documentedRole;
+  const availabilityLabel = isRtl && project.availabilityLabelAr ? project.availabilityLabelAr : project.availabilityLabel;
 
   // Editorial placeholder schematic when screenshots are pending
   const renderVisualSchematic = () => {
@@ -103,7 +106,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           <div className="flex items-center justify-between border-b border-white/15 pb-3">
             <span className="text-sky-300 tracking-wider flex items-center gap-2">
               <Globe className="w-3.5 h-3.5 text-sky-400" />
-              ABOMISKA.ORG :: BILINGUAL_3D
+              {isRtl ? 'شركة أبو مسكة :: تجربة ثلاثية الأبعاد' : 'ABOMISKA.ORG :: BILINGUAL_3D'}
             </span>
             <span className="text-cohere-muted">React 19 / Three.js</span>
           </div>
@@ -124,12 +127,12 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       );
     }
 
-    // Default container
+    // Default container for all other projects
     return (
       <div className="w-full h-full min-h-[160px] bg-cohere-softStone/50 p-5 rounded-md flex flex-col justify-between font-mono text-xs border border-cohere-hairline text-start">
         <div className="flex items-center justify-between border-b border-cohere-hairline/80 pb-2.5">
           <span className="text-cohere-slate font-medium uppercase tracking-wider text-[11px]">
-            {project.categoryLabel}
+            {categoryLabel}
           </span>
           <span className="text-cohere-muted">{project.year}</span>
         </div>
@@ -139,7 +142,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             {organization}
           </span>
           <span className="text-[11px] text-cohere-slate block mt-1 line-clamp-2">
-            {project.documentedRole}
+            {documentedRole}
           </span>
         </div>
 
@@ -169,7 +172,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             <div>
               {/* Metadata Badges */}
               <div className="flex flex-wrap items-center gap-2 mb-3">
-                <AvailabilityBadge type={project.availability} label={project.availabilityLabel} />
+                <AvailabilityBadge type={project.availability} label={availabilityLabel} />
                 <span className="text-xs font-mono uppercase text-cohere-muted">
                   {organization}
                 </span>
@@ -193,7 +196,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                   {isRtl ? 'المساهمة والمسؤولية الموثقة:' : 'Documented Contribution:'}
                 </span>
                 <p className="text-xs text-cohere-slate mt-0.5 leading-normal">
-                  {project.documentedRole}
+                  {documentedRole}
                 </p>
               </div>
 
@@ -232,7 +235,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-pill bg-cohere-canvas border border-cohere-hairline text-cohere-ink text-xs font-mono uppercase tracking-wider hover:bg-cohere-softStone transition-colors"
                 >
-                  <span>{link.type === 'google-play' ? t.projects.btnStore : link.label}</span>
+                  <span>{link.type === 'google-play' ? t.projects.btnStore : (isRtl && link.labelAr ? link.labelAr : link.label)}</span>
                   <ExternalLink className="w-3.5 h-3.5 text-cohere-slate" />
                 </a>
               ))}
@@ -254,7 +257,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 
         {/* Metadata Badges */}
         <div className="flex flex-wrap items-center gap-2 mb-2.5">
-          <AvailabilityBadge type={project.availability} label={project.availabilityLabel} />
+          <AvailabilityBadge type={project.availability} label={availabilityLabel} />
           <span className="text-[11px] font-mono text-cohere-muted">
             {organization}
           </span>

@@ -15,6 +15,10 @@ export const TechnicalSkillsSection: React.FC = () => {
     <ShieldCheck className="w-4 h-4" />,
   ];
 
+  const currentGroup = SKILL_GROUPS[activeCategory];
+  const currentCategoryTitle = isRtl && currentGroup.categoryAr ? currentGroup.categoryAr : currentGroup.category;
+  const currentCategoryDescription = isRtl && currentGroup.descriptionAr ? currentGroup.descriptionAr : currentGroup.description;
+
   return (
     <section id="expertise" className="py-24 bg-cohere-canvas border-b border-cohere-hairline">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -62,25 +66,23 @@ export const TechnicalSkillsSection: React.FC = () => {
               <span className="font-mono text-xs uppercase tracking-wider text-cohere-muted">
                 {t.skills.domainFocus}
               </span>
-              {!isRtl && SKILL_GROUPS[activeCategory].categoryAr && (
+              {!isRtl && currentGroup.categoryAr && (
                 <span className="font-arabic text-xs text-cohere-slate" dir="rtl">
-                  {SKILL_GROUPS[activeCategory].categoryAr}
+                  {currentGroup.categoryAr}
                 </span>
               )}
             </div>
             <h3 className="font-display text-2xl sm:text-3xl font-normal text-cohere-ink mb-2">
-              {isRtl && SKILL_GROUPS[activeCategory].categoryAr
-                ? SKILL_GROUPS[activeCategory].categoryAr
-                : SKILL_GROUPS[activeCategory].category}
+              {currentCategoryTitle}
             </h3>
             <p className="text-sm text-cohere-slate">
-              {SKILL_GROUPS[activeCategory].description}
+              {currentCategoryDescription}
             </p>
           </div>
 
           {/* Skills Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {SKILL_GROUPS[activeCategory].skills.map((skill, sIdx) => (
+            {currentGroup.skills.map((skill, sIdx) => (
               <div
                 key={sIdx}
                 className="bg-cohere-canvas border border-cohere-hairline rounded-md p-4 hover:border-cohere-primary/80 transition-all duration-150 hover:shadow-xs flex flex-col justify-between"

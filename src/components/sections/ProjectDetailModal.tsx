@@ -30,6 +30,17 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
 
   const title = isRtl && project.titleAr ? project.titleAr : project.title;
   const organization = isRtl && project.organizationAr ? project.organizationAr : project.organization;
+  const categoryLabel = isRtl && project.categoryLabelAr ? project.categoryLabelAr : project.categoryLabel;
+  const availabilityLabel = isRtl && project.availabilityLabelAr ? project.availabilityLabelAr : project.availabilityLabel;
+  const fullOverview = isRtl && project.fullOverviewAr ? project.fullOverviewAr : project.fullOverview;
+  const businessContext = isRtl && project.businessContextAr ? project.businessContextAr : project.businessContext;
+  const engineeringSolution = isRtl && project.engineeringSolutionAr ? project.engineeringSolutionAr : project.engineeringSolution;
+  const documentedRole = isRtl && project.documentedRoleAr ? project.documentedRoleAr : project.documentedRole;
+  const keyContributions = isRtl && project.keyContributionsAr ? project.keyContributionsAr : project.keyContributions;
+  const keyFeatures = isRtl && project.keyFeaturesAr ? project.keyFeaturesAr : project.keyFeatures;
+  const architectureHighlights = isRtl && project.architectureHighlightsAr ? project.architectureHighlightsAr : project.architectureHighlights;
+  const metrics = isRtl && project.metricsAr ? project.metricsAr : project.metrics;
+  const subApplications = isRtl && project.subApplicationsAr ? project.subApplicationsAr : project.subApplications;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 overflow-y-auto modal-backdrop animate-in fade-in duration-200">
@@ -41,9 +52,9 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
         {/* Sticky Header */}
         <div className="sticky top-0 bg-cohere-canvas/95 backdrop-blur-md border-b border-cohere-hairline p-5 sm:p-6 flex items-center justify-between z-20">
           <div className="flex items-center gap-3">
-            <AvailabilityBadge type={project.availability} label={project.availabilityLabel} />
+            <AvailabilityBadge type={project.availability} label={availabilityLabel} />
             <span className="font-mono text-xs uppercase text-cohere-muted tracking-wider hidden sm:inline">
-              {project.categoryLabel}
+              {categoryLabel}
             </span>
           </div>
 
@@ -82,14 +93,14 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
             )}
 
             <p className="text-base sm:text-lg text-cohere-slate leading-relaxed mt-4 font-normal">
-              {project.fullOverview}
+              {fullOverview}
             </p>
           </div>
 
           {/* Quick Metrics Strip */}
-          {project.metrics && project.metrics.length > 0 && (
+          {metrics && metrics.length > 0 && (
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 p-4 bg-cohere-softStone/60 rounded-md border border-cohere-hairline">
-              {project.metrics.map((m, idx) => (
+              {metrics.map((m, idx) => (
                 <div key={idx} className="flex flex-col">
                   <span className="font-mono text-[11px] uppercase tracking-wider text-cohere-muted">
                     {m.label}
@@ -103,14 +114,14 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
           )}
 
           {/* Sub-Applications Matrix (for Smsm Ecosystem) */}
-          {project.subApplications && project.subApplications.length > 0 && (
+          {subApplications && subApplications.length > 0 && (
             <div className="border border-cohere-hairline rounded-md p-5 bg-cohere-canvas">
               <h4 className="font-mono text-xs uppercase tracking-wider text-cohere-ink font-bold mb-4 flex items-center gap-2">
                 <Layers className="w-4 h-4 text-cohere-actionBlue" />
                 {t.projects.subAppsHeading}
               </h4>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {project.subApplications.map((sub, idx) => (
+                {subApplications.map((sub, idx) => (
                   <div key={idx} className="p-4 bg-cohere-softStone/40 rounded-xs border border-cohere-hairline/80 flex flex-col justify-between text-start">
                     <div>
                       <span className="font-mono text-[10px] uppercase text-cohere-muted tracking-wider">
@@ -152,7 +163,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
                 {t.projects.businessContext}
               </span>
               <p className="text-sm text-cohere-slate leading-relaxed">
-                {project.businessContext}
+                {businessContext}
               </p>
             </div>
 
@@ -162,7 +173,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
                 {t.projects.engineeringSolution}
               </span>
               <p className="text-sm text-cohere-slate leading-relaxed">
-                {project.engineeringSolution}
+                {engineeringSolution}
               </p>
             </div>
           </div>
@@ -174,16 +185,16 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
                 {t.projects.documentedContribution}
               </span>
               <span className="text-xs font-mono text-cohere-muted">
-                {isRtl ? 'مطابق للسيرة الذاتية' : 'Strict Factual Claims'}
+                {isRtl ? 'مطابق للسيرة الذاتية الرسمية' : 'Strict Factual Claims'}
               </span>
             </div>
 
             <p className="text-sm text-cohere-ink font-medium mb-4">
-              {project.documentedRole}
+              {documentedRole}
             </p>
 
             <ul className="space-y-2.5">
-              {project.keyContributions.map((c, idx) => (
+              {keyContributions.map((c, idx) => (
                 <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-cohere-slate leading-normal">
                   <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
                   <span>{c}</span>
@@ -198,7 +209,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
               {t.projects.keyFeatures}
             </h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-              {project.keyFeatures.map((f, idx) => (
+              {keyFeatures.map((f, idx) => (
                 <div key={idx} className="p-3 bg-cohere-softStone/30 rounded-xs border border-cohere-hairline text-xs font-mono text-cohere-ink flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-cohere-slate"></span>
                   <span>{f}</span>
@@ -208,13 +219,13 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
           </div>
 
           {/* Architecture Highlights */}
-          {project.architectureHighlights && project.architectureHighlights.length > 0 && (
+          {architectureHighlights && architectureHighlights.length > 0 && (
             <div className="bg-[#121217] dark:bg-[#08080b] text-white p-6 rounded-md border border-white/10 font-mono text-xs">
               <span className="text-cohere-paleGreen uppercase tracking-wider font-semibold block mb-3">
                 {t.projects.architectureHighlights}
               </span>
               <ul className="space-y-2 text-white/80">
-                {project.architectureHighlights.map((arch, idx) => (
+                {architectureHighlights.map((arch, idx) => (
                   <li key={idx} className="flex items-start gap-2">
                     <span className="text-cohere-paleGreen">›</span>
                     <span>{arch}</span>
@@ -300,7 +311,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
               {t.projects.verificationStatus}:
             </span>
             <span className="font-mono text-xs text-cohere-ink font-semibold">
-              {project.availabilityLabel}
+              {availabilityLabel}
             </span>
           </div>
 
@@ -313,7 +324,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-pill bg-cohere-primary text-cohere-canvas text-xs font-mono uppercase tracking-wider hover:opacity-90 transition-opacity shadow-xs"
               >
-                <span>{link.type === 'google-play' ? t.projects.btnStore : link.label}</span>
+                <span>{link.type === 'google-play' ? t.projects.btnStore : (isRtl && link.labelAr ? link.labelAr : link.label)}</span>
                 <ExternalLink className="w-3.5 h-3.5" />
               </a>
             ))}
