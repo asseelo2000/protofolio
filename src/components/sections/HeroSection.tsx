@@ -25,9 +25,9 @@ export const HeroSection: React.FC = () => {
       />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10">
-        <div className="max-w-4xl relative text-start">
+        <div className="max-w-4xl relative text-center sm:text-start mx-auto sm:mx-0">
           {/* Status Capsule */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-pill bg-cohere-softStone/90 border border-cohere-hairline backdrop-blur-xs mb-8 shadow-xs">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-pill bg-cohere-softStone/90 border border-cohere-hairline backdrop-blur-xs mb-8 shadow-xs mx-auto sm:mx-0">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
             <span className={`font-mono text-xs uppercase tracking-wider text-cohere-slate ${isRtl ? 'mono-label-ar text-[13px] sm:text-[14px]' : ''}`}>
               {t.hero.badge}
@@ -44,12 +44,12 @@ export const HeroSection: React.FC = () => {
           </h1>
 
           {/* Subheading / Summary from CV */}
-          <p className={`text-lg sm:text-xl text-cohere-slate leading-relaxed font-normal max-w-2xl mb-10 ${isRtl ? 'body-large-ar' : ''}`}>
+          <p className={`text-lg sm:text-xl text-cohere-slate leading-relaxed font-normal max-w-2xl mb-10 mx-auto sm:mx-0 ${isRtl ? 'body-large-ar' : ''}`}>
             {t.hero.summary}
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-wrap items-center gap-4 pt-2">
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 pt-2">
             <a
               href="#projects"
               className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-pill bg-cohere-primary text-cohere-canvas text-xs font-mono uppercase tracking-wider hover:opacity-90 transition-all duration-200 active:scale-95 shadow-sm"
@@ -79,7 +79,7 @@ export const HeroSection: React.FC = () => {
 
           {/* Verified Engineering Anchors */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-14 mt-10 border-t border-cohere-hairline/80">
-            <div className="flex items-start gap-3 bg-cohere-canvas/70 sm:bg-transparent p-2 sm:p-0 rounded-xs text-start">
+            <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-start gap-3 bg-cohere-canvas/70 sm:bg-transparent p-3 sm:p-0 rounded-xs">
               <ShieldCheck className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
               <div>
                 <h4 className="font-mono text-xs uppercase tracking-wide text-cohere-ink font-semibold">
@@ -91,7 +91,7 @@ export const HeroSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex items-start gap-3 bg-cohere-canvas/70 sm:bg-transparent p-2 sm:p-0 rounded-xs text-start">
+            <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-start gap-3 bg-cohere-canvas/70 sm:bg-transparent p-3 sm:p-0 rounded-xs">
               <Layers className="w-5 h-5 text-cohere-actionBlue shrink-0 mt-0.5" />
               <div>
                 <h4 className="font-mono text-xs uppercase tracking-wide text-cohere-ink font-semibold">
@@ -103,7 +103,7 @@ export const HeroSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex items-start gap-3 bg-cohere-canvas/70 sm:bg-transparent p-2 sm:p-0 rounded-xs text-start">
+            <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-start gap-3 bg-cohere-canvas/70 sm:bg-transparent p-3 sm:p-0 rounded-xs">
               <Terminal className="w-5 h-5 text-cohere-coral shrink-0 mt-0.5" />
               <div>
                 <h4 className="font-mono text-xs uppercase tracking-wide text-cohere-ink font-semibold">

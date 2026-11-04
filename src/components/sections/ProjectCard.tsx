@@ -166,7 +166,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   // Tier 1 Featured Card Layout
   if (featuredLayout) {
     return (
-      <div className="group relative bg-cohere-canvas border border-cohere-hairline rounded-lg p-6 sm:p-8 hover:border-cohere-primary/80 transition-all duration-200 hover:shadow-md text-start">
+      <div className="group relative bg-cohere-canvas border border-cohere-hairline rounded-lg p-6 sm:p-8 hover:border-cohere-primary/80 transition-all duration-200 hover:shadow-md text-center lg:text-start">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           {/* Visual Canvas / Schematic */}
           <div className="lg:col-span-5 flex flex-col justify-center">
@@ -174,10 +174,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           </div>
 
           {/* Project Details */}
-          <div className="lg:col-span-7 flex flex-col justify-between">
-            <div>
+          <div className="lg:col-span-7 flex flex-col justify-between items-center lg:items-start">
+            <div className="w-full flex flex-col items-center lg:items-start">
               {/* Metadata Badges */}
-              <div className="flex flex-wrap items-center gap-2 mb-3">
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 mb-3">
                 <AvailabilityBadge type={project.availability} label={availabilityLabel} />
                 <span className="text-xs font-mono uppercase text-cohere-muted">
                   {organization}
@@ -199,7 +199,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               </p>
 
               {/* Documented Role */}
-              <div className={`bg-cohere-softStone/50 p-3 rounded-xs mb-4 ${isRtl ? 'border-r-2 border-cohere-primary' : 'border-l-2 border-cohere-primary'}`}>
+              <div className={`w-full bg-cohere-softStone/50 p-3.5 rounded-xs mb-4 text-center lg:text-start ${isRtl ? 'lg:border-r-2 border-cohere-primary' : 'lg:border-l-2 border-cohere-primary'}`}>
                 <span className={`font-mono text-[11px] uppercase tracking-wider text-cohere-ink font-semibold block ${isRtl ? 'mono-label-ar text-[12px]' : ''}`}>
                   {isRtl ? 'المساهمة والمسؤولية الموثقة:' : 'Documented Contribution:'}
                 </span>
@@ -209,7 +209,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               </div>
 
               {/* Tech Tags */}
-              <div className="flex flex-wrap gap-1.5 mb-6">
+              <div className="flex flex-wrap justify-center lg:justify-start gap-1.5 mb-6">
                 {[
                   ...(project.technologies.backend || []),
                   ...(project.technologies.frontend || []),
@@ -226,7 +226,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             </div>
 
             {/* Actions */}
-            <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-cohere-hairline">
+            <div className="w-full flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-4 border-t border-cohere-hairline">
               <button
                 onClick={() => onSelect(project)}
                 className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-pill bg-cohere-primary text-cohere-canvas text-xs font-mono uppercase tracking-wider hover:opacity-90 transition-colors active:scale-95 cursor-pointer shadow-xs ${isRtl ? 'btn' : ''}`}
@@ -256,7 +256,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 
   // Tier 2 / Regular Grid Card Layout
   return (
-    <div className="group flex flex-col justify-between bg-cohere-canvas border border-cohere-hairline rounded-lg p-6 hover:border-cohere-primary/80 transition-all duration-200 hover:shadow-xs text-start">
+    <div className="group flex flex-col justify-between bg-cohere-canvas border border-cohere-hairline rounded-lg p-6 hover:border-cohere-primary/80 transition-all duration-200 hover:shadow-xs text-center sm:text-start">
       <div>
         {/* Top Visual Mini Schematic */}
         <div className="mb-5">
@@ -264,7 +264,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         </div>
 
         {/* Metadata Badges */}
-        <div className="flex flex-wrap items-center gap-2 mb-2.5">
+        <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 mb-2.5">
           <AvailabilityBadge type={project.availability} label={availabilityLabel} />
           <span className="text-[11px] font-mono text-cohere-muted">
             {organization}
@@ -282,7 +282,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         </p>
 
         {/* Tech tags */}
-        <div className="flex flex-wrap gap-1 mb-5">
+        <div className="flex flex-wrap justify-center sm:justify-start gap-1 mb-5">
           {[
             ...(project.technologies.backend || []),
             ...(project.technologies.frontend || []),
@@ -298,7 +298,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       </div>
 
       {/* Action footer */}
-      <div className="flex items-center justify-between pt-4 border-t border-cohere-hairline">
+      <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-3 pt-4 border-t border-cohere-hairline">
         <button
           onClick={() => onSelect(project)}
           className={`inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-cohere-ink hover:text-cohere-actionBlue transition-colors font-medium cursor-pointer ${isRtl ? 'mono-label-ar text-[13px]' : ''}`}

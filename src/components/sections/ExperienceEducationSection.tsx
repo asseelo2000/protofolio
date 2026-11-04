@@ -11,8 +11,8 @@ export const ExperienceEducationSection: React.FC = () => {
     <section id="background" className="py-24 bg-cohere-canvas border-b border-cohere-hairline">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-3xl mb-12 text-start">
-          <div className="flex items-center gap-2 mb-3">
+        <div className="max-w-3xl mb-12 text-center md:text-start mx-auto md:mx-0">
+          <div className="flex items-center justify-center md:justify-start gap-2 mb-3">
             <span className={`font-mono text-xs uppercase tracking-wideCode text-cohere-muted ${isRtl ? 'mono-label-ar text-[13px]' : ''}`}>
               {isRtl ? (
                 <>
@@ -27,13 +27,13 @@ export const ExperienceEducationSection: React.FC = () => {
           <h2 className={`font-display text-3xl sm:text-5xl font-normal text-cohere-ink tracking-tight mb-4 ${isRtl ? 'section-display-ar' : ''}`}>
             {t.background.sectionTitle}
           </h2>
-          <p className={`text-sm sm:text-base text-cohere-slate leading-relaxed ${isRtl ? 'body-ar' : ''}`}>
+          <p className={`text-sm sm:text-base text-cohere-slate leading-relaxed mx-auto md:mx-0 ${isRtl ? 'body-ar' : ''}`}>
             {t.background.sectionSubtitle}
           </p>
         </div>
 
         {/* Tab Selector */}
-        <div className="flex items-center gap-2 pb-6 mb-10 border-b border-cohere-hairline">
+        <div className="flex flex-wrap justify-center md:justify-start items-center gap-2 pb-6 mb-10 border-b border-cohere-hairline">
           <button
             onClick={() => setActiveTab('experience')}
             className={`flex items-center gap-2 px-4 py-2.5 rounded-pill text-xs font-mono uppercase tracking-wider transition-all cursor-pointer ${
@@ -89,9 +89,9 @@ export const ExperienceEducationSection: React.FC = () => {
               return (
                 <div
                   key={idx}
-                  className="bg-cohere-canvas border border-cohere-hairline rounded-lg p-6 sm:p-8 hover:border-cohere-primary/80 transition-all hover:shadow-xs text-start"
+                  className="bg-cohere-canvas border border-cohere-hairline rounded-lg p-6 sm:p-8 hover:border-cohere-primary/80 transition-all hover:shadow-xs text-center sm:text-start"
                 >
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-cohere-hairline/80 pb-4 mb-6">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between text-center sm:text-start gap-2 border-b border-cohere-hairline/80 pb-4 mb-6">
                     <div>
                       <span className="font-mono text-xs uppercase tracking-wider text-cohere-muted block">
                         <bdi className="ltr-token font-mono">{period}</bdi>
@@ -99,7 +99,7 @@ export const ExperienceEducationSection: React.FC = () => {
                       <h3 className={`font-display text-2xl font-normal text-cohere-ink mt-1 ${isRtl ? 'card-heading-ar text-[24px]' : ''}`}>
                         {roleTitle}
                       </h3>
-                      <div className="flex items-center gap-2 mt-1">
+                      <div className="flex items-center justify-center sm:justify-start gap-2 mt-1">
                         <span className="text-sm font-medium text-cohere-ink">{companyName}</span>
                         <span className="text-cohere-muted text-xs">•</span>
                         <span className="text-xs text-cohere-slate">{location}</span>
@@ -107,7 +107,7 @@ export const ExperienceEducationSection: React.FC = () => {
                     </div>
 
                     {!isRtl && exp.companyAr && (
-                      <span className="font-arabic text-sm text-cohere-slate text-right" dir="rtl">
+                      <span className="font-arabic text-sm text-cohere-slate text-center sm:text-right" dir="rtl">
                         {exp.companyAr}
                       </span>
                     )}
@@ -122,16 +122,16 @@ export const ExperienceEducationSection: React.FC = () => {
                         return (
                           <div
                             key={sIdx}
-                            className={`${
-                              isRtl ? 'pr-4 border-r-2' : 'pl-4 border-l-2'
-                            } border-cohere-hairline`}
+                            className={`p-3 sm:p-0 rounded-xs bg-cohere-softStone/30 sm:bg-transparent ${
+                              isRtl ? 'sm:pr-4 sm:border-r-2' : 'sm:pl-4 sm:border-l-2'
+                            } border-cohere-hairline text-center sm:text-start`}
                           >
                             <h4 className={`font-mono text-xs uppercase tracking-wider text-cohere-ink font-bold mb-3 ${isRtl ? 'feature-heading-ar text-[15px]' : ''}`}>
                               {subTitle}
                             </h4>
                             <ul className="space-y-2">
                               {subResponsibilities.map((resp, rIdx) => (
-                                <li key={rIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-cohere-slate leading-relaxed">
+                                <li key={rIdx} className="flex items-start justify-center sm:justify-start gap-2.5 text-xs sm:text-sm text-cohere-slate leading-relaxed">
                                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 mt-2"></span>
                                   <span className={isRtl ? 'body-ar text-[14px] leading-[1.65]' : ''}>{resp}</span>
                                 </li>
@@ -162,10 +162,10 @@ export const ExperienceEducationSection: React.FC = () => {
               return (
                 <div
                   key={idx}
-                  className="bg-cohere-canvas border border-cohere-hairline rounded-lg p-6 sm:p-8 flex flex-col justify-between text-start"
+                  className="bg-cohere-canvas border border-cohere-hairline rounded-lg p-6 sm:p-8 flex flex-col justify-between text-center sm:text-start"
                 >
                   <div>
-                    <div className="flex items-center justify-between text-xs font-mono uppercase tracking-wider text-cohere-muted mb-3">
+                    <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between text-xs font-mono uppercase tracking-wider text-cohere-muted mb-3 gap-1">
                       <span><bdi className="ltr-token font-mono">{period}</bdi></span>
                       <span>{location}</span>
                     </div>
@@ -178,7 +178,7 @@ export const ExperienceEducationSection: React.FC = () => {
                       {institution}
                     </p>
 
-                    <div className="p-4 bg-emerald-500/10 border border-emerald-500/20 rounded-md mb-6">
+                    <div className="p-4 bg-emerald-500/10 border border-emerald-500/20 rounded-md mb-6 text-center sm:text-start">
                       <span className={`font-mono text-[10px] uppercase text-emerald-800 dark:text-emerald-400 tracking-wider block font-bold ${isRtl ? 'mono-label-ar text-[12px]' : ''}`}>
                         {t.background.distinctionBadge}
                       </span>
@@ -196,7 +196,7 @@ export const ExperienceEducationSection: React.FC = () => {
 
                     <ul className="space-y-2">
                       {highlights.map((h, hIdx) => (
-                        <li key={hIdx} className="flex items-start gap-2 text-xs sm:text-sm text-cohere-slate">
+                        <li key={hIdx} className="flex items-start justify-center sm:justify-start gap-2 text-xs sm:text-sm text-cohere-slate">
                           <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
                           <span className={isRtl ? 'body-ar text-[14px] leading-[1.6]' : ''}>{h}</span>
                         </li>
@@ -206,7 +206,7 @@ export const ExperienceEducationSection: React.FC = () => {
 
                   {!isRtl && edu.degreeAr && (
                     <div className="pt-6 mt-6 border-t border-cohere-hairline">
-                      <p className="font-arabic text-xs text-cohere-muted text-right" dir="rtl">
+                      <p className="font-arabic text-xs text-cohere-muted text-center sm:text-right" dir="rtl">
                         {edu.degreeAr} — {edu.institutionAr}
                       </p>
                     </div>
@@ -230,10 +230,10 @@ export const ExperienceEducationSection: React.FC = () => {
               return (
                 <div
                   key={idx}
-                  className="bg-cohere-canvas border border-cohere-hairline rounded-md p-5 flex flex-col justify-between hover:border-cohere-primary/80 transition-colors text-start"
+                  className="bg-cohere-canvas border border-cohere-hairline rounded-md p-5 flex flex-col justify-between hover:border-cohere-primary/80 transition-colors text-center sm:text-start"
                 >
                   <div>
-                    <div className="flex items-center justify-between text-[11px] font-mono text-cohere-muted mb-2">
+                    <div className="flex items-center justify-center sm:justify-between text-[11px] font-mono text-cohere-muted mb-2 gap-2">
                       <span>{issuer}</span>
                       <span><bdi className="ltr-token font-mono">{date}</bdi></span>
                     </div>
@@ -248,7 +248,7 @@ export const ExperienceEducationSection: React.FC = () => {
                   </div>
 
                   {grade && (
-                    <div className="pt-2 border-t border-cohere-hairline flex items-center justify-between">
+                    <div className="pt-2 border-t border-cohere-hairline flex items-center justify-center sm:justify-between">
                       <span className="font-mono text-[11px] font-semibold text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 px-2 py-0.5 rounded-full border border-emerald-200 dark:border-emerald-800/40">
                         {grade}
                       </span>

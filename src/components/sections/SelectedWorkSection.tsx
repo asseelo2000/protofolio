@@ -50,9 +50,9 @@ export const SelectedWorkSection: React.FC<SelectedWorkSectionProps> = ({ onSele
     <section id="projects" className="py-24 bg-cohere-canvas border-b border-cohere-hairline">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 text-start">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 text-center md:text-start items-center md:items-start">
           <div>
-            <div className="flex items-center gap-2 mb-3">
+            <div className="flex items-center justify-center md:justify-start gap-2 mb-3">
               <span className={`font-mono text-xs uppercase tracking-wideCode text-cohere-muted ${isRtl ? 'mono-label-ar text-[13px]' : ''}`}>
                 {isRtl ? (
                   <>
@@ -69,13 +69,13 @@ export const SelectedWorkSection: React.FC<SelectedWorkSectionProps> = ({ onSele
             </h2>
           </div>
 
-          <p className={`text-sm sm:text-base text-cohere-slate max-w-md leading-relaxed ${isRtl ? 'body-ar' : ''}`}>
+          <p className={`text-sm sm:text-base text-cohere-slate max-w-md leading-relaxed mx-auto md:mx-0 ${isRtl ? 'body-ar' : ''}`}>
             {t.projects.sectionSubtitle}
           </p>
         </div>
 
         {/* Filter Navigation Tabs */}
-        <div className="flex flex-wrap items-center gap-2 pb-8 mb-10 border-b border-cohere-hairline">
+        <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 pb-8 mb-10 border-b border-cohere-hairline">
           {filterTabs.map((tab) => (
             <button
               key={tab.id}
@@ -119,7 +119,7 @@ export const SelectedWorkSection: React.FC<SelectedWorkSectionProps> = ({ onSele
         {/* Tier 2: Asymmetric Grid Projects */}
         {tier2Projects.length > 0 && (
           <div className="mb-14">
-            <div className="flex items-center gap-2 mb-6">
+            <div className="flex items-center justify-center md:justify-start gap-2 mb-6">
               <span className="font-mono text-xs uppercase tracking-wider text-cohere-muted">
                 {t.projects.tier2Heading}
               </span>
@@ -140,7 +140,7 @@ export const SelectedWorkSection: React.FC<SelectedWorkSectionProps> = ({ onSele
         {/* Tier 3: Specialized Institutional Systems Table */}
         {tier3Projects.length > 0 && (
           <div>
-            <div className="flex items-center gap-2 mb-4">
+            <div className="flex items-center justify-center md:justify-start gap-2 mb-4">
               <span className="font-mono text-xs uppercase tracking-wider text-cohere-muted">
                 {t.projects.tier3Heading}
               </span>
@@ -157,10 +157,10 @@ export const SelectedWorkSection: React.FC<SelectedWorkSectionProps> = ({ onSele
                     <div
                       key={p.id}
                       onClick={() => onSelectProject(p)}
-                      className="p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-cohere-softStone/60 transition-colors cursor-pointer group text-start"
+                      className="p-5 sm:p-6 flex flex-col sm:flex-row items-center sm:items-start justify-between gap-4 hover:bg-cohere-softStone/60 transition-colors cursor-pointer group text-center sm:text-start"
                     >
-                      <div className="max-w-2xl">
-                        <div className="flex items-center gap-2 mb-1.5">
+                      <div className="max-w-2xl flex flex-col items-center sm:items-start">
+                        <div className="flex items-center justify-center sm:justify-start gap-2 mb-1.5">
                           <AvailabilityBadge type={p.availability} label={p.availabilityLabel} />
                           <span className="text-xs font-mono text-cohere-muted">
                             {org} · <bdi className="ltr-token font-mono">{p.year}</bdi>
@@ -174,7 +174,7 @@ export const SelectedWorkSection: React.FC<SelectedWorkSectionProps> = ({ onSele
                         </p>
                       </div>
 
-                      <div className="flex items-center gap-3 shrink-0">
+                      <div className="flex items-center justify-center sm:justify-start gap-3 shrink-0">
                         <div className="hidden md:flex flex-wrap gap-1">
                           {(p.technologies.backend || []).map((tech) => (
                             <span key={tech} className="px-2 py-0.5 rounded-xs bg-cohere-canvas border border-cohere-hairline text-[10px] font-mono text-cohere-ink">

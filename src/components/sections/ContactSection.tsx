@@ -24,8 +24,8 @@ export const ContactSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-start">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Left Column: Editorial Statement */}
-          <div className="lg:col-span-6">
-            <div className="flex items-center gap-2 mb-3">
+          <div className="lg:col-span-6 text-center lg:text-start">
+            <div className="flex items-center justify-center lg:justify-start gap-2 mb-3">
               <span className={`font-mono text-xs uppercase tracking-wideCode text-cohere-muted ${isRtl ? 'mono-label-ar text-[13px]' : ''}`}>
                 {isRtl ? (
                   <>
@@ -40,11 +40,11 @@ export const ContactSection: React.FC = () => {
             <h2 className={`font-display text-3xl sm:text-5xl font-normal text-cohere-ink tracking-tight mb-6 ${isRtl ? 'section-display-ar' : ''}`}>
               {t.contact.sectionTitle}
             </h2>
-            <p className={`text-base text-cohere-slate leading-relaxed mb-8 max-w-lg ${isRtl ? 'body-ar' : ''}`}>
+            <p className={`text-base text-cohere-slate leading-relaxed mb-8 max-w-lg mx-auto lg:mx-0 ${isRtl ? 'body-ar' : ''}`}>
               {t.contact.sectionSubtitle}
             </p>
 
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
               <a
                 href={`mailto:${CANDIDATE_PROFILE.email}?subject=Engineering%20Inquiry%20via%20Portfolio`}
                 className={`inline-flex items-center gap-2 px-6 py-3.5 rounded-pill bg-cohere-primary text-cohere-canvas text-xs font-mono uppercase tracking-wider hover:opacity-90 transition-opacity shadow-xs ${isRtl ? 'btn' : ''}`}
@@ -67,19 +67,19 @@ export const ContactSection: React.FC = () => {
           </div>
 
           {/* Right Column: Direct Verified Channels Card */}
-          <div className="lg:col-span-6 bg-cohere-softStone/40 border border-cohere-hairline rounded-lg p-6 sm:p-8">
+          <div className="lg:col-span-6 bg-cohere-softStone/40 border border-cohere-hairline rounded-lg p-6 sm:p-8 text-center sm:text-start">
             <h3 className={`font-mono text-xs uppercase tracking-wider text-cohere-muted font-bold mb-6 ${isRtl ? 'mono-label-ar text-[13px]' : ''}`}>
               {t.contact.channelsTitle}
             </h3>
 
             <div className="space-y-4">
               {/* Email item */}
-              <div className="p-4 bg-cohere-canvas border border-cohere-hairline rounded-md flex items-center justify-between gap-4">
-                <div className="flex items-center gap-3 overflow-hidden">
+              <div className="p-4 bg-cohere-canvas border border-cohere-hairline rounded-md flex flex-col sm:flex-row items-center justify-between text-center sm:text-start gap-4">
+                <div className="flex flex-col sm:flex-row items-center gap-3 overflow-hidden text-center sm:text-start">
                   <div className="p-2 rounded-xs bg-cohere-softStone text-cohere-ink shrink-0">
                     <Mail className="w-4 h-4" />
                   </div>
-                  <div className="truncate text-start">
+                  <div className="truncate text-center sm:text-start">
                     <span className={`text-[10px] font-mono text-cohere-muted uppercase block ${isRtl ? 'mono-label-ar text-[11px]' : ''}`}>
                       {t.contact.emailLabel}
                     </span>
@@ -104,12 +104,12 @@ export const ContactSection: React.FC = () => {
               </div>
 
               {/* Phone item */}
-              <div className="p-4 bg-cohere-canvas border border-cohere-hairline rounded-md flex items-center justify-between gap-4">
-                <div className="flex items-center gap-3 overflow-hidden">
+              <div className="p-4 bg-cohere-canvas border border-cohere-hairline rounded-md flex flex-col sm:flex-row items-center justify-between text-center sm:text-start gap-4">
+                <div className="flex flex-col sm:flex-row items-center gap-3 overflow-hidden text-center sm:text-start">
                   <div className="p-2 rounded-xs bg-cohere-softStone text-cohere-ink shrink-0">
                     <Phone className="w-4 h-4" />
                   </div>
-                  <div className="text-start">
+                  <div className="text-center sm:text-start">
                     <span className={`text-[10px] font-mono text-cohere-muted uppercase block ${isRtl ? 'mono-label-ar text-[11px]' : ''}`}>
                       {t.contact.phoneLabel}
                     </span>
@@ -134,11 +134,11 @@ export const ContactSection: React.FC = () => {
               </div>
 
               {/* Location item */}
-              <div className="p-4 bg-cohere-canvas border border-cohere-hairline rounded-md flex items-center gap-3">
+              <div className="p-4 bg-cohere-canvas border border-cohere-hairline rounded-md flex flex-col sm:flex-row items-center justify-center sm:justify-start text-center sm:text-start gap-3">
                 <div className="p-2 rounded-xs bg-cohere-softStone text-cohere-ink shrink-0">
                   <MapPin className="w-4 h-4" />
                 </div>
-                <div className="text-start">
+                <div className="text-center sm:text-start">
                   <span className={`text-[10px] font-mono text-cohere-muted uppercase block ${isRtl ? 'mono-label-ar text-[11px]' : ''}`}>
                     {t.contact.locationLabel}
                   </span>
@@ -153,13 +153,13 @@ export const ContactSection: React.FC = () => {
                 href={CANDIDATE_PROFILE.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-4 bg-cohere-canvas border border-cohere-hairline rounded-md flex items-center justify-between hover:border-cohere-primary/80 transition-colors group"
+                className="p-4 bg-cohere-canvas border border-cohere-hairline rounded-md flex flex-col sm:flex-row items-center justify-between text-center sm:text-start hover:border-cohere-primary/80 transition-colors group gap-3"
               >
-                <div className="flex items-center gap-3">
+                <div className="flex flex-col sm:flex-row items-center gap-3 text-center sm:text-start">
                   <div className="p-2 rounded-xs bg-cohere-softStone text-cohere-ink shrink-0">
                     <Github className="w-4 h-4" />
                   </div>
-                  <div className="text-start">
+                  <div className="text-center sm:text-start">
                     <span className={`text-[10px] font-mono text-cohere-muted uppercase block ${isRtl ? 'mono-label-ar text-[11px]' : ''}`}>
                       {t.contact.githubLabel}
                     </span>

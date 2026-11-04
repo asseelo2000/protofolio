@@ -11,13 +11,13 @@ export const KeyMetricsStrip: React.FC = () => {
           {t.metrics.stats.map((stat, idx) => (
             <div
               key={idx}
-              className={`flex flex-col text-start ${
+              className={`flex flex-col text-center sm:text-start items-center sm:items-start p-2 sm:p-0 ${
                 isRtl
-                  ? 'border-r border-cohere-hairline pr-4 first:border-r-0 md:first:border-r'
-                  : 'border-l border-cohere-hairline pl-4 first:border-l-0 md:first:border-l'
+                  ? 'sm:border-r border-cohere-hairline sm:pr-4 sm:first:border-r-0 md:first:border-r'
+                  : 'sm:border-l border-cohere-hairline sm:pl-4 sm:first:border-l-0 md:first:border-l'
               }`}
             >
-              <div className="flex items-baseline gap-1">
+              <div className="flex items-baseline justify-center sm:justify-start gap-1">
                 <span className="font-display text-3xl sm:text-4xl font-normal text-cohere-ink tracking-tight">
                   <bdi className="ltr-token font-mono">{stat.value}</bdi>
                 </span>

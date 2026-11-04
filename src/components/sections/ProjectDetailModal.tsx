@@ -70,38 +70,38 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
         {/* Modal Scrollable Body */}
         <div className="overflow-y-auto p-6 sm:p-8 space-y-8">
           {/* Main Title & Organization */}
-          <div>
-            <div className="flex flex-wrap items-center gap-2 text-xs font-mono text-cohere-slate uppercase tracking-wider mb-2">
+          <div className="text-center sm:text-start">
+            <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 text-xs font-mono text-cohere-slate uppercase tracking-wider mb-2">
               <span className="font-semibold text-cohere-ink">{organization}</span>
               <span>•</span>
               <span><bdi className="ltr-token font-mono">{project.year}</bdi></span>
             </div>
 
-            <h2 className={`font-display text-2xl sm:text-4xl font-normal text-cohere-ink tracking-tight ${isRtl ? 'section-heading-ar' : ''}`}>
+            <h2 className={`font-display text-2xl sm:text-4xl font-normal text-cohere-ink tracking-tight text-center sm:text-start ${isRtl ? 'section-heading-ar' : ''}`}>
               {title}
             </h2>
 
             {!isRtl && project.titleAr && (
-              <p className="font-arabic text-base sm:text-lg text-cohere-muted mt-1 text-right" dir="rtl">
+              <p className="font-arabic text-base sm:text-lg text-cohere-muted mt-1 text-center sm:text-right" dir="rtl">
                 {project.titleAr}
               </p>
             )}
             {isRtl && project.title && (
-              <p className="font-mono text-xs text-cohere-muted mt-1 text-left" dir="ltr">
+              <p className="font-mono text-xs text-cohere-muted mt-1 text-center sm:text-left" dir="ltr">
                 <bdi className="ltr-token font-mono">{project.title}</bdi>
               </p>
             )}
 
-            <p className={`text-base sm:text-lg text-cohere-slate leading-relaxed mt-4 font-normal ${isRtl ? 'body-large-ar' : ''}`}>
+            <p className={`text-base sm:text-lg text-cohere-slate leading-relaxed mt-4 font-normal text-center sm:text-start ${isRtl ? 'body-large-ar' : ''}`}>
               {fullOverview}
             </p>
           </div>
 
           {/* Quick Metrics Strip */}
           {metrics && metrics.length > 0 && (
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 p-4 bg-cohere-softStone/60 rounded-md border border-cohere-hairline">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 p-4 bg-cohere-softStone/60 rounded-md border border-cohere-hairline text-center sm:text-start">
               {metrics.map((m, idx) => (
-                <div key={idx} className="flex flex-col">
+                <div key={idx} className="flex flex-col items-center sm:items-start">
                   <span className={`font-mono text-[11px] uppercase tracking-wider text-cohere-muted ${isRtl ? 'mono-label-ar text-[12px]' : ''}`}>
                     {m.label}
                   </span>
@@ -305,7 +305,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
         </div>
 
         {/* Modal Sticky Footer with Public Links */}
-        <div className="sticky bottom-0 bg-cohere-canvas/95 backdrop-blur-md border-t border-cohere-hairline p-4 sm:p-6 flex flex-wrap items-center justify-between gap-3 z-20">
+        <div className="sticky bottom-0 bg-cohere-canvas/95 backdrop-blur-md border-t border-cohere-hairline p-4 sm:p-6 flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-3 z-20">
           <div className="flex items-center gap-2">
             <span className="font-mono text-xs text-cohere-slate">
               {t.projects.verificationStatus}:
@@ -315,7 +315,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
             </span>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center justify-center gap-3">
             {project.links.filter(l => l.type !== 'case-study').map((link) => (
               <a
                 key={link.url}

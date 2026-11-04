@@ -174,7 +174,7 @@ export const Navbar: React.FC = () => {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-3 py-2 text-sm font-mono uppercase tracking-wide text-cohere-ink hover:bg-cohere-softStone rounded-xs transition-colors text-start"
+                className={`px-3 py-2.5 text-sm font-mono uppercase tracking-wide text-cohere-ink hover:bg-cohere-softStone rounded-xs transition-colors text-center ${isRtl ? 'mono-label-ar text-[15px]' : ''}`}
               >
                 {link.label}
               </a>

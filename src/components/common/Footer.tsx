@@ -13,10 +13,10 @@ export const Footer: React.FC = () => {
 
   return (
     <footer className="bg-cohere-canvas border-t border-cohere-hairline py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-start">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-start">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-cohere-hairline">
           {/* Brand */}
-          <div className="flex items-center gap-3">
+          <div className="flex flex-col sm:flex-row items-center text-center sm:text-start gap-3">
             <div className="relative w-8 h-8 rounded-md overflow-hidden border border-cohere-hairline/80 shadow-xs shrink-0 bg-cohere-softStone">
               <img
                 src={mePhoto}
@@ -38,7 +38,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Socials & Channels */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center justify-center gap-4">
             <a
               href={CANDIDATE_PROFILE.github}
               target="_blank"
@@ -79,7 +79,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Metadata */}
-        <div className={`flex flex-col sm:flex-row items-center justify-between gap-3 pt-6 text-[11px] font-mono text-cohere-muted ${isRtl ? 'micro-ar text-[12px]' : ''}`}>
+        <div className={`flex flex-col sm:flex-row items-center justify-between text-center gap-3 pt-6 text-[11px] font-mono text-cohere-muted ${isRtl ? 'micro-ar text-[12px]' : ''}`}>
           <span>{t.footer.rights}</span>
           {t.footer.designRef && <span>{t.footer.designRef}</span>}
         </div>
