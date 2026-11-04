@@ -53,17 +53,23 @@ export const SelectedWorkSection: React.FC<SelectedWorkSectionProps> = ({ onSele
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 text-start">
           <div>
             <div className="flex items-center gap-2 mb-3">
-              <span className="font-mono text-xs uppercase tracking-wideCode text-cohere-muted">
-                {t.projects.sectionTag}
+              <span className={`font-mono text-xs uppercase tracking-wideCode text-cohere-muted ${isRtl ? 'mono-label-ar text-[13px]' : ''}`}>
+                {isRtl ? (
+                  <>
+                    <bdi className="ltr-token">01 /</bdi> {t.projects.sectionTag.replace(/^01\s*\/\s*/, '')}
+                  </>
+                ) : (
+                  t.projects.sectionTag
+                )}
               </span>
               <span className="w-1.5 h-1.5 rounded-full bg-cohere-coral"></span>
             </div>
-            <h2 className="font-display text-3xl sm:text-5xl font-normal text-cohere-ink tracking-tight">
+            <h2 className={`font-display text-3xl sm:text-5xl font-normal text-cohere-ink tracking-tight ${isRtl ? 'section-display-ar' : ''}`}>
               {t.projects.sectionTitle}
             </h2>
           </div>
 
-          <p className="text-sm sm:text-base text-cohere-slate max-w-md leading-relaxed">
+          <p className={`text-sm sm:text-base text-cohere-slate max-w-md leading-relaxed ${isRtl ? 'body-ar' : ''}`}>
             {t.projects.sectionSubtitle}
           </p>
         </div>
@@ -75,6 +81,8 @@ export const SelectedWorkSection: React.FC<SelectedWorkSectionProps> = ({ onSele
               key={tab.id}
               onClick={() => setActiveCategory(tab.id)}
               className={`px-4 py-2 rounded-pill text-xs font-mono uppercase tracking-wider transition-all duration-150 cursor-pointer flex items-center gap-2 ${
+                isRtl ? 'mono-label-ar text-[13px] sm:text-[14px]' : ''
+              } ${
                 activeCategory === tab.id
                   ? 'bg-cohere-primary text-cohere-canvas shadow-xs font-semibold'
                   : 'bg-cohere-softStone/60 text-cohere-slate hover:bg-cohere-softStone hover:text-cohere-ink'
@@ -88,7 +96,7 @@ export const SelectedWorkSection: React.FC<SelectedWorkSectionProps> = ({ onSele
                     : 'bg-cohere-hairline text-cohere-ink'
                 }`}
               >
-                {tab.count}
+                <bdi className="ltr-token font-mono">{tab.count}</bdi>
               </span>
             </button>
           ))}
@@ -155,13 +163,13 @@ export const SelectedWorkSection: React.FC<SelectedWorkSectionProps> = ({ onSele
                         <div className="flex items-center gap-2 mb-1.5">
                           <AvailabilityBadge type={p.availability} label={p.availabilityLabel} />
                           <span className="text-xs font-mono text-cohere-muted">
-                            {org} · {p.year}
+                            {org} · <bdi className="ltr-token font-mono">{p.year}</bdi>
                           </span>
                         </div>
                         <h4 className="font-display text-lg font-medium text-cohere-ink group-hover:text-cohere-actionBlue transition-colors">
                           {title}
                         </h4>
-                        <p className="text-xs text-cohere-slate mt-1 line-clamp-2">
+                        <p className={`text-xs text-cohere-slate mt-1 line-clamp-2 ${isRtl ? 'body-ar leading-[1.65]' : ''}`}>
                           {desc}
                         </p>
                       </div>
@@ -170,7 +178,7 @@ export const SelectedWorkSection: React.FC<SelectedWorkSectionProps> = ({ onSele
                         <div className="hidden md:flex flex-wrap gap-1">
                           {(p.technologies.backend || []).map((tech) => (
                             <span key={tech} className="px-2 py-0.5 rounded-xs bg-cohere-canvas border border-cohere-hairline text-[10px] font-mono text-cohere-ink">
-                              {tech}
+                              <bdi className="ltr-token font-mono">{tech}</bdi>
                             </span>
                           ))}
                         </div>

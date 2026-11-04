@@ -36,7 +36,7 @@ export default {
         display: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
         sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
         mono: ['"JetBrains Mono"', '"SFMono-Regular"', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
-        arabic: ['"Almarai"', 'Cairo', 'system-ui', 'sans-serif'],
+        arabic: ['"Cairo"', 'Tajawal', '"Noto Sans Arabic"', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
         xs: "4px",

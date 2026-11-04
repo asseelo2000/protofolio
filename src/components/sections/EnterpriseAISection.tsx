@@ -15,15 +15,21 @@ export const EnterpriseAISection: React.FC = () => {
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
           <div className="flex items-center gap-2 mb-3">
-            <span className="font-mono text-xs uppercase tracking-wideCode text-emerald-300">
-              {t.enterpriseAi.sectionTag}
+            <span className={`font-mono text-xs uppercase tracking-wideCode text-emerald-300 ${isRtl ? 'mono-label-ar text-[13px]' : ''}`}>
+              {isRtl ? (
+                <>
+                  <bdi className="ltr-token">02 /</bdi> {t.enterpriseAi.sectionTag.replace(/^02\s*\/\s*/, '')}
+                </>
+              ) : (
+                t.enterpriseAi.sectionTag
+              )}
             </span>
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
           </div>
-          <h2 className="font-display text-3xl sm:text-5xl font-normal tracking-tight text-white mb-6">
+          <h2 className={`font-display text-3xl sm:text-5xl font-normal tracking-tight text-white mb-6 ${isRtl ? 'section-display-ar' : ''}`}>
             {t.enterpriseAi.sectionTitle}
           </h2>
-          <p className="text-base sm:text-lg text-emerald-100/80 leading-relaxed font-normal">
+          <p className={`text-base sm:text-lg text-emerald-100/80 leading-relaxed font-normal ${isRtl ? 'body-large-ar' : ''}`}>
             {t.enterpriseAi.sectionSubtitle}
           </p>
         </div>
@@ -53,12 +59,12 @@ export const EnterpriseAISection: React.FC = () => {
                     <div className="p-2.5 rounded-sm bg-white/10 border border-white/10">
                       {icons[idx % icons.length]}
                     </div>
-                    <span className="font-mono text-[11px] uppercase tracking-wider text-emerald-200/70">
+                    <span className={`font-mono text-[11px] uppercase tracking-wider text-emerald-200/70 ${isRtl ? 'mono-label-ar text-[12px]' : ''}`}>
                       {isRtl ? 'البنك التجاري اليمني' : initiative.organization}
                     </span>
                   </div>
 
-                  <h3 className="font-display text-xl sm:text-2xl font-normal text-white mb-2">
+                  <h3 className={`font-display text-xl sm:text-2xl font-normal text-white mb-2 ${isRtl ? 'card-heading-ar text-[24px]' : ''}`}>
                     {title}
                   </h3>
 
@@ -68,7 +74,7 @@ export const EnterpriseAISection: React.FC = () => {
                     </p>
                   )}
 
-                  <p className="text-sm text-emerald-100/80 leading-relaxed mb-6 font-normal">
+                  <p className={`text-sm text-emerald-100/80 leading-relaxed mb-6 font-normal ${isRtl ? 'body-ar leading-[1.7]' : ''}`}>
                     {description}
                   </p>
 
@@ -76,7 +82,7 @@ export const EnterpriseAISection: React.FC = () => {
                     {capabilities.map((cap, cIdx) => (
                       <div key={cIdx} className="flex items-start gap-2 text-xs text-white/90">
                         <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
-                        <span>{cap}</span>
+                        <span className={isRtl ? 'body-ar text-[14px] leading-[1.6]' : ''}>{cap}</span>
                       </div>
                     ))}
                   </div>
@@ -88,7 +94,7 @@ export const EnterpriseAISection: React.FC = () => {
                       key={tag}
                       className="px-2.5 py-0.5 rounded-pill bg-black/20 border border-white/15 text-[11px] font-mono text-emerald-100"
                     >
-                      {tag}
+                      <bdi className="ltr-token font-mono">{tag}</bdi>
                     </span>
                   ))}
                 </div>

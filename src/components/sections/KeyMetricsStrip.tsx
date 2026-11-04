@@ -19,13 +19,13 @@ export const KeyMetricsStrip: React.FC = () => {
             >
               <div className="flex items-baseline gap-1">
                 <span className="font-display text-3xl sm:text-4xl font-normal text-cohere-ink tracking-tight">
-                  {stat.value}
+                  <bdi className="ltr-token font-mono">{stat.value}</bdi>
                 </span>
               </div>
-              <span className="text-xs font-mono uppercase tracking-wide text-cohere-ink font-medium mt-1">
+              <span className={`text-xs font-mono uppercase tracking-wide text-cohere-ink font-medium mt-1 ${isRtl ? 'mono-label-ar text-[13px] sm:text-[14px]' : ''}`}>
                 {stat.label}
               </span>
-              <span className="text-[11px] text-cohere-muted mt-0.5">
+              <span className={`text-[11px] text-cohere-muted mt-0.5 ${isRtl ? 'micro-ar text-[12px] sm:text-[13px]' : ''}`}>
                 {stat.subtext}
               </span>
             </div>

@@ -28,10 +28,10 @@ export const Footer: React.FC = () => {
               />
             </div>
             <div>
-              <span className="font-display font-bold text-sm tracking-tight text-cohere-ink uppercase">
+              <span className={`font-display font-bold text-sm tracking-tight text-cohere-ink uppercase ${isRtl ? 'mono-label-ar text-[14px]' : ''}`}>
                 {isRtl ? CANDIDATE_PROFILE.nameAr : CANDIDATE_PROFILE.name}
               </span>
-              <span className="text-[11px] font-mono text-cohere-muted block">
+              <span className={`text-[11px] font-mono text-cohere-muted block ${isRtl ? 'micro-ar text-[12px]' : ''}`}>
                 {isRtl ? CANDIDATE_PROFILE.titleAr : CANDIDATE_PROFILE.title}
               </span>
             </div>
@@ -79,7 +79,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Metadata */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-6 text-[11px] font-mono text-cohere-muted">
+        <div className={`flex flex-col sm:flex-row items-center justify-between gap-3 pt-6 text-[11px] font-mono text-cohere-muted ${isRtl ? 'micro-ar text-[12px]' : ''}`}>
           <span>{t.footer.rights}</span>
           {t.footer.designRef && <span>{t.footer.designRef}</span>}
         </div>

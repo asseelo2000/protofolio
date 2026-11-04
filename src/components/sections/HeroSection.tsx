@@ -29,13 +29,13 @@ export const HeroSection: React.FC = () => {
           {/* Status Capsule */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-pill bg-cohere-softStone/90 border border-cohere-hairline backdrop-blur-xs mb-8 shadow-xs">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span className="font-mono text-xs uppercase tracking-wider text-cohere-slate">
+            <span className={`font-mono text-xs uppercase tracking-wider text-cohere-slate ${isRtl ? 'mono-label-ar text-[13px] sm:text-[14px]' : ''}`}>
               {t.hero.badge}
             </span>
           </div>
 
           {/* Large Editorial Headline */}
-          <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-normal tracking-tightest text-cohere-ink leading-[1.08] mb-6">
+          <h1 className={`font-display text-4xl sm:text-6xl lg:text-7xl font-normal tracking-tightest text-cohere-ink leading-[1.08] mb-6 ${isRtl ? 'hero-display-ar' : ''}`}>
             {t.hero.headlinePart1}{' '}
             <span className="underline decoration-cohere-hairline underline-offset-8">
               {t.hero.headlineUnderline}
@@ -44,7 +44,7 @@ export const HeroSection: React.FC = () => {
           </h1>
 
           {/* Subheading / Summary from CV */}
-          <p className="text-lg sm:text-xl text-cohere-slate leading-relaxed font-normal max-w-2xl mb-10">
+          <p className={`text-lg sm:text-xl text-cohere-slate leading-relaxed font-normal max-w-2xl mb-10 ${isRtl ? 'body-large-ar' : ''}`}>
             {t.hero.summary}
           </p>
 

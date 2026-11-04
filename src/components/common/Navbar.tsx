@@ -54,10 +54,10 @@ export const Navbar: React.FC = () => {
               />
             </div>
             <div className="flex flex-col text-start">
-              <span className="font-display font-bold text-sm tracking-tight text-cohere-ink group-hover:text-cohere-actionBlue transition-colors uppercase">
+              <span className={`font-display font-bold text-sm tracking-tight text-cohere-ink group-hover:text-cohere-actionBlue transition-colors uppercase ${isRtl ? 'mono-label-ar text-[14px]' : ''}`}>
                 {isRtl ? CANDIDATE_PROFILE.nameAr : CANDIDATE_PROFILE.name}
               </span>
-              <span className="font-mono text-[10px] uppercase tracking-wideCode text-cohere-muted flex items-center gap-1">
+              <span className={`font-mono text-[10px] uppercase tracking-wideCode text-cohere-muted flex items-center gap-1 ${isRtl ? 'mono-label-ar text-[11px]' : ''}`}>
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
                 {t.nav.subtitle}
               </span>
@@ -70,7 +70,7 @@ export const Navbar: React.FC = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className="px-3 py-1.5 text-xs font-mono tracking-wide uppercase text-cohere-slate hover:text-cohere-primary transition-colors rounded-sm hover:bg-cohere-softStone/60"
+                className={`px-3 py-1.5 text-xs font-mono tracking-wide uppercase text-cohere-slate hover:text-cohere-primary transition-colors rounded-sm hover:bg-cohere-softStone/60 ${isRtl ? 'mono-label-ar text-[13px] sm:text-[14px]' : ''}`}
               >
                 {link.label}
               </a>
@@ -122,7 +122,7 @@ export const Navbar: React.FC = () => {
             {/* Direct Contact CTA */}
             <a
               href="#contact"
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-pill bg-cohere-primary text-cohere-canvas text-xs font-mono uppercase tracking-wider hover:opacity-90 active:scale-95 transition-all duration-150 shadow-xs"
+              className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-pill bg-cohere-primary text-cohere-canvas text-xs font-mono uppercase tracking-wider hover:opacity-90 active:scale-95 transition-all duration-150 shadow-xs ${isRtl ? 'btn' : ''}`}
             >
               <span>{t.nav.getInTouch}</span>
               <ArrowUpRight className={`w-3.5 h-3.5 opacity-80 ${isRtl ? 'rotate-[-90deg]' : ''}`} />

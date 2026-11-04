@@ -15,7 +15,8 @@ export const Badge: React.FC<BadgeProps> = ({
   size = 'md',
   className = '',
 }) => {
-  const sizeClasses = size === 'sm' ? 'px-2 py-0.5 text-[11px]' : 'px-3 py-1 text-xs';
+  const { isRtl } = useLanguage();
+  const sizeClasses = size === 'sm' ? 'px-2.5 py-0.5 text-[11px]' : 'px-3 py-1 text-xs';
 
   const variantClasses = {
     default: 'bg-cohere-softStone text-cohere-ink border border-cohere-hairline',
@@ -29,7 +30,7 @@ export const Badge: React.FC<BadgeProps> = ({
 
   return (
     <span
-      className={`inline-flex items-center gap-1.5 rounded-pill font-mono tracking-wide uppercase transition-all duration-150 ${sizeClasses} ${variantClasses} ${className}`}
+      className={`badge inline-flex items-center gap-1.5 rounded-pill font-mono tracking-wide uppercase transition-all duration-150 ${sizeClasses} ${isRtl ? 'mono-label-ar text-[13px] leading-[1.6]' : ''} ${variantClasses} ${className}`}
     >
       {children}
     </span>

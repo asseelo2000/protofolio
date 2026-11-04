@@ -74,10 +74,10 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
             <div className="flex flex-wrap items-center gap-2 text-xs font-mono text-cohere-slate uppercase tracking-wider mb-2">
               <span className="font-semibold text-cohere-ink">{organization}</span>
               <span>•</span>
-              <span>{project.year}</span>
+              <span><bdi className="ltr-token font-mono">{project.year}</bdi></span>
             </div>
 
-            <h2 className="font-display text-2xl sm:text-4xl font-normal text-cohere-ink tracking-tight">
+            <h2 className={`font-display text-2xl sm:text-4xl font-normal text-cohere-ink tracking-tight ${isRtl ? 'section-heading-ar' : ''}`}>
               {title}
             </h2>
 
@@ -88,11 +88,11 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
             )}
             {isRtl && project.title && (
               <p className="font-mono text-xs text-cohere-muted mt-1 text-left" dir="ltr">
-                {project.title}
+                <bdi className="ltr-token font-mono">{project.title}</bdi>
               </p>
             )}
 
-            <p className="text-base sm:text-lg text-cohere-slate leading-relaxed mt-4 font-normal">
+            <p className={`text-base sm:text-lg text-cohere-slate leading-relaxed mt-4 font-normal ${isRtl ? 'body-large-ar' : ''}`}>
               {fullOverview}
             </p>
           </div>
@@ -102,11 +102,11 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 p-4 bg-cohere-softStone/60 rounded-md border border-cohere-hairline">
               {metrics.map((m, idx) => (
                 <div key={idx} className="flex flex-col">
-                  <span className="font-mono text-[11px] uppercase tracking-wider text-cohere-muted">
+                  <span className={`font-mono text-[11px] uppercase tracking-wider text-cohere-muted ${isRtl ? 'mono-label-ar text-[12px]' : ''}`}>
                     {m.label}
                   </span>
                   <span className="font-display text-base sm:text-lg font-medium text-cohere-ink mt-0.5">
-                    {m.value}
+                    <bdi className="ltr-token font-mono">{m.value}</bdi>
                   </span>
                 </div>
               ))}
@@ -249,7 +249,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
                   <div className="flex flex-col gap-1">
                     {project.technologies.backend.map((tItem) => (
                       <span key={tItem} className="text-xs font-mono text-cohere-ink">
-                        {tItem}
+                        <bdi className="ltr-token font-mono">{tItem}</bdi>
                       </span>
                     ))}
                   </div>
@@ -264,7 +264,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
                   <div className="flex flex-col gap-1">
                     {project.technologies.frontend.map((tItem) => (
                       <span key={tItem} className="text-xs font-mono text-cohere-ink">
-                        {tItem}
+                        <bdi className="ltr-token font-mono">{tItem}</bdi>
                       </span>
                     ))}
                   </div>
@@ -279,7 +279,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
                   <div className="flex flex-col gap-1">
                     {project.technologies.database.map((tItem) => (
                       <span key={tItem} className="text-xs font-mono text-cohere-ink">
-                        {tItem}
+                        <bdi className="ltr-token font-mono">{tItem}</bdi>
                       </span>
                     ))}
                   </div>
@@ -294,7 +294,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
                   <div className="flex flex-col gap-1">
                     {project.technologies.infrastructure.map((tItem) => (
                       <span key={tItem} className="text-xs font-mono text-cohere-ink">
-                        {tItem}
+                        <bdi className="ltr-token font-mono">{tItem}</bdi>
                       </span>
                     ))}
                   </div>
