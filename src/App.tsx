@@ -47,7 +47,7 @@ const PortfolioContent: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-cohere-canvas text-cohere-ink flex flex-col selection:bg-cohere-paleGreen selection:text-cohere-deepGreen transition-colors duration-200">
+    <div className="min-h-screen bg-cohere-canvas text-cohere-ink flex flex-col selection:bg-cohere-paleGreen selection:text-cohere-deepGreen dark:selection:bg-[#174235] dark:selection:text-[#f4f4f7] transition-colors duration-200">
       {/* Top Fixed Header with Theme & Language Switchers */}
       <Navbar />
 

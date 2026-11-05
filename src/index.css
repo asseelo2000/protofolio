@@ -118,6 +118,35 @@
 }
 
 /* ==========================================================================
+   TEXT SELECTION (LIGHT & DARK MODE)
+   ========================================================================== */
+
+/* Light mode default selection: pale green highlight with deep forest text */
+::selection {
+  background-color: var(--cohere-pale-green);
+  color: var(--cohere-deep-green);
+}
+
+::-moz-selection {
+  background-color: var(--cohere-pale-green);
+  color: var(--cohere-deep-green);
+}
+
+/* Dark mode selection only: soft white text on muted non-noisy deep emerald background */
+.dark ::selection,
+.dark *::selection {
+  background-color: #174235 !important;
+  color: #f4f4f7 !important;
+}
+
+.dark ::-moz-selection,
+.dark *::-moz-selection {
+  background-color: #174235 !important;
+  color: #f4f4f7 !important;
+}
+
+
+/* ==========================================================================
    ARABIC RTL TYPOGRAPHY & DESIGN SYSTEM (Unified on Cairo Family)
    Audited against Cohere 2026 Enterprise Standards (design_arabic.md)
    ========================================================================== */
