@@ -46,3 +46,4 @@ export const GooglePlayLogo: React.FC<GooglePlayLogoProps> = ({
     </svg>
   );
 };
+
