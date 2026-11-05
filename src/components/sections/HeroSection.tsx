@@ -35,7 +35,7 @@ export const HeroSection: React.FC = () => {
           </div>
 
           {/* Large Editorial Headline */}
-          <h1 className={`font-display text-4xl sm:text-6xl lg:text-7xl font-normal tracking-tightest text-cohere-ink leading-[1.08] mb-6 ${isRtl ? 'hero-display-ar' : ''}`}>
+          <h1 className={`font-display text-3xl sm:text-5xl lg:text-6xl font-normal tracking-tightest text-cohere-ink leading-[1.12] mb-6 ${isRtl ? 'hero-display-ar' : ''}`}>
             {t.hero.headlinePart1}{' '}
             <span className="underline decoration-cohere-hairline underline-offset-8">
               {t.hero.headlineUnderline}
@@ -44,7 +44,7 @@ export const HeroSection: React.FC = () => {
           </h1>
 
           {/* Subheading / Summary from CV */}
-          <p className={`text-lg sm:text-xl text-cohere-slate leading-relaxed font-normal max-w-2xl mb-10 mx-auto sm:mx-0 ${isRtl ? 'body-large-ar' : ''}`}>
+          <p className={`text-base sm:text-lg text-cohere-slate leading-relaxed font-normal max-w-2xl mb-10 mx-auto sm:mx-0 ${isRtl ? 'hero-subheading-ar' : ''}`}>
             {t.hero.summary}
           </p>
 

@@ -190,9 +190,15 @@
 
 /* Arabic typographic hierarchy helper classes */
 [dir="rtl"] .hero-display-ar {
-  font-size: clamp(2.5rem, 5.5vw, 5rem) !important; /* 40px - 80px */
-  line-height: 1.20 !important;
+  font-size: clamp(1.875rem, 3.6vw, 3.25rem) !important; /* 30px - 52px (calibrated for harmonious hero balance) */
+  line-height: 1.28 !important;
   font-weight: 600 !important;
+}
+
+[dir="rtl"] .hero-subheading-ar {
+  font-size: clamp(0.9375rem, 1.3vw, 1.0625rem) !important; /* 15px - 17px */
+  line-height: 1.80 !important;
+  font-weight: 400 !important;
 }
 
 [dir="rtl"] .section-display-ar {

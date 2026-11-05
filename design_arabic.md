@@ -31,9 +31,9 @@ colors:
 typography:
   hero-display:
     fontFamily: Cairo
-    fontSize: 80px
+    fontSize: 52px
     fontWeight: 600
-    lineHeight: 1.2
+    lineHeight: 1.3
     letterSpacing: 0
   product-display:
     fontFamily: Cairo
